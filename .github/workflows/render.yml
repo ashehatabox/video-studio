@@ -45,10 +45,15 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Install FFmpeg and fonts
+      - name: Install FFmpeg
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg fonts-noto fonts-noto-color-emoji >/dev/null
+          if ! command -v ffmpeg >/dev/null; then
+            for i in 1 2 3; do
+              timeout 240 sudo apt-get update -qq -o Acquire::Retries=3 && \
+              timeout 300 sudo apt-get install -y -qq --no-install-recommends ffmpeg >/dev/null && break
+              echo "apt attempt $i failed, retrying"; sleep 10
+            done
+          fi
           ffmpeg -version | head -1
 
       - name: Work out which projects to render
