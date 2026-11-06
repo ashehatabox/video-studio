@@ -1,0 +1,39 @@
+{
+  "name": "Brand name",
+  "tagline": "One-line promise",
+  "website": "https://example.com",
+  "audience": "Who the videos speak to",
+  "voice": {
+    "tone": "e.g. warm, calm, confident",
+    "words_to_use": [],
+    "words_to_avoid": []
+  },
+  "colors": {
+    "background": "#0b0b0c",
+    "text": "#f5f5f2",
+    "accent": "#c8a35a",
+    "muted": "#8a8a85"
+  },
+  "fonts": {
+    "display": "Font family for titles",
+    "body": "Font family for body text",
+    "files": "assets/fonts/ (woff2 files, if not a Google Font)"
+  },
+  "logo": {
+    "primary": "assets/logo.svg",
+    "on_dark": "assets/logo-light.svg"
+  },
+  "cta": {
+    "default": "Shop now at example.com",
+    "url": "example.com"
+  },
+  "voiceover": {
+    "voice": "Voice name / provider used last time",
+    "pace": "normal",
+    "language": "en"
+  },
+  "music_mood": "e.g. soft piano, 90-110 BPM",
+  "motion_style": "Named reference style, e.g. Apple product bumper",
+  "canva_brand_kit": "Canva brand kit name, if any",
+  "notes": "Anything else: things to always or never show"
+}
