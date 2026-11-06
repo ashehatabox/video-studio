@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "historyId": "e564fb67-582b-4b14-8847-96661d4f67d7",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/1a/1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3"
+    },
+    "CLAUDE.md": {
+      "hash": "1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/1a/1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3"
+    },
+    "assets/ana-beach-knee.jpg": {
+      "hash": "48eabe69c05dc2eaafb54a71e7d9223350cd807f4a7619a04f49e5b4768b9562",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/48/48eabe69c05dc2eaafb54a71e7d9223350cd807f4a7619a04f49e5b4768b9562"
+    },
+    "assets/ana-hand-sea.jpg": {
+      "hash": "ab9d5abeb3f85b539c3f76b56700c5478f3a0b4664ff22f0dc4db28cc469d71c",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/ab/ab9d5abeb3f85b539c3f76b56700c5478f3a0b4664ff22f0dc4db28cc469d71c"
+    },
+    "assets/ana-hands-held.jpg": {
+      "hash": "5b7c7152b50c047a879c1dbeefcfa5f393750dc3eebb75578844388ce0586bbf",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/5b/5b7c7152b50c047a879c1dbeefcfa5f393750dc3eebb75578844388ce0586bbf"
+    },
+    "assets/fonts/cormorant-garamond-latin-400-normal.woff2": {
+      "hash": "8048ac209bec741e1c29cd0cfac5aac1c0c2ba8c3ddbd4a58fa9bd92ef5c63c2",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/80/8048ac209bec741e1c29cd0cfac5aac1c0c2ba8c3ddbd4a58fa9bd92ef5c63c2"
+    },
+    "assets/fonts/cormorant-garamond-latin-500-italic.woff2": {
+      "hash": "4fb55a7a6d564d428061fe12c82c896264bcc8b7f0b52840bf88e0db5b91256f",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/4f/4fb55a7a6d564d428061fe12c82c896264bcc8b7f0b52840bf88e0db5b91256f"
+    },
+    "assets/fonts/italiana-latin-400-normal.woff2": {
+      "hash": "5079c87a4e86c58e8cd4f18ec2d3255918b7d565708ed934b15c4710301f838c",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/50/5079c87a4e86c58e8cd4f18ec2d3255918b7d565708ed934b15c4710301f838c"
+    },
+    "assets/fonts/manrope-latin-400-normal.woff2": {
+      "hash": "849290ef12a2eeb9af5c11924120d11aa4ae8b435ed3347d7fc8bc240c293ca3",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/84/849290ef12a2eeb9af5c11924120d11aa4ae8b435ed3347d7fc8bc240c293ca3"
+    },
+    "assets/fonts/manrope-latin-500-normal.woff2": {
+      "hash": "19874318747181a650eda439c37955220b849d9c4797c9e0718ee67d4bf929bc",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/19/19874318747181a650eda439c37955220b849d9c4797c9e0718ee67d4bf929bc"
+    },
+    "assets/ring-oxidized-cut.png": {
+      "hash": "bfd153422eeabcad894155e28c3879786d2d788a00727bb4b0c7822cc35f3217",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/bf/bfd153422eeabcad894155e28c3879786d2d788a00727bb4b0c7822cc35f3217"
+    },
+    "assets/ring-silver-cut.png": {
+      "hash": "8cfdda5a6b275309b0ef55236c7b04293a8f40dc9b2d7383cbbf0d4c4db12cdd",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/8c/8cfdda5a6b275309b0ef55236c7b04293a8f40dc9b2d7383cbbf0d4c4db12cdd"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "ae29271712f479dcfe1906a262f7c1e4ba4110b0f8b34e50cc8243af1a8c78ca",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/ae/ae29271712f479dcfe1906a262f7c1e4ba4110b0f8b34e50cc8243af1a8c78ca"
+    },
+    "meta.json": {
+      "hash": "3cfccbb784842ef9e00e7b2d37df961388f09e687f177bf277472724acce9c00",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/3c/3cfccbb784842ef9e00e7b2d37df961388f09e687f177bf277472724acce9c00"
+    },
+    "package-lock.json": {
+      "hash": "91025034a791c8523dbdb45993969ac76ef6f8a70be83c5fd0bb628d214aa6b0",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/91/91025034a791c8523dbdb45993969ac76ef6f8a70be83c5fd0bb628d214aa6b0"
+    },
+    "package.json": {
+      "hash": "aef93dc090f66c7e382685342a98de6ac6d9e1fcb6a6c9ae44c259e305fa6924",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/ae/aef93dc090f66c7e382685342a98de6ac6d9e1fcb6a6c9ae44c259e305fa6924"
+    },
+    "assets/mix.wav": {
+      "hash": "1659c3c79d7d369316b1734004085c3ee9bb829c2e68ef9dabf26f7e2d415ecf",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/16/1659c3c79d7d369316b1734004085c3ee9bb829c2e68ef9dabf26f7e2d415ecf"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "fd323d8a-d7e6-4765-8f00-02d9de0e958d",
+      "completedAt": 1793974671489,
+      "output": "/home/runner/work/video-studio/video-studio/out/ana-waking-tree.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}
