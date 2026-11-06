@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Italiana"; src: url("assets/fonts/italiana-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Cormorant Garamond"; src: url("assets/fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Cormorant Garamond"; src: url("assets/fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2"); font-weight: 500; font-style: italic; }
+      @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+
+      :root {
+        --ground: #151515;
+        --ink: #eceae5;
+        --accent: #c9b99a;
+        --muted: #8c8a85;
+        --display: "Italiana", serif;
+        --serif: "Cormorant Garamond", serif;
+        --sans: "Manrope", sans-serif;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); color: var(--ink); }
+      .clip { position: absolute; inset: 0; }
+      .scene { overflow: hidden; }
+
+      /* type */
+      .line { display: block; overflow: hidden; padding: 0.06em 0 0.12em; }
+      .w { display: inline-block; will-change: transform; }
+      .serif-xl { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 92px; line-height: 1.02; letter-spacing: -0.01em; }
+      .serif-l { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 78px; line-height: 1.04; letter-spacing: -0.01em; }
+      .caps { font-family: var(--display); letter-spacing: 0.32em; text-transform: uppercase; }
+      .label { font-family: var(--sans); font-weight: 500; font-size: 26px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); }
+      .text-block { position: absolute; left: 110px; right: 110px; text-align: center; }
+
+      /* scene 1 + 2: rings on ground */
+      .ring { position: absolute; left: 50%; top: 50%; transform-origin: 50% 50%; }
+      .sweep-wrap { position: absolute; inset: 0; -webkit-mask-size: 100% 100%; mask-size: 100% 100%; overflow: hidden; }
+      .sweep { position: absolute; top: -20%; left: -60%; width: 60%; height: 140%;
+        background: linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,250,240,0.55) 50%, rgba(255,255,255,0) 100%); }
+      .glow { position: absolute; left: 50%; top: 50%; width: 1300px; height: 1300px; margin: -650px 0 0 -650px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(236,234,229,0.10) 0%, rgba(236,234,229,0.04) 35%, rgba(21,21,21,0) 65%); }
+
+      /* photos */
+      .photo { position: absolute; inset: -2px; background-size: cover; background-position: center; transform-origin: 50% 60%; }
+      .shade-top { position: absolute; left: 0; right: 0; top: 0; height: 980px;
+        background: linear-gradient(180deg, rgba(10,10,10,0.72) 0%, rgba(10,10,10,0.45) 45%, rgba(10,10,10,0) 100%); }
+      .shade-bottom { position: absolute; left: 0; right: 0; bottom: 0; height: 520px;
+        background: linear-gradient(0deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0) 100%); }
+      .vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 55%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.45) 100%); }
+
+      /* hero */
+      #hero-iris { position: absolute; inset: 0; background: var(--ground); }
+
+      /* end card */
+      .wordmark { font-family: var(--display); font-size: 104px; letter-spacing: 0.34em; text-indent: 0.34em; }
+      .cta { display: inline-block; font-family: var(--sans); font-weight: 500; font-size: 40px; letter-spacing: 0.16em; text-transform: uppercase;
+        color: var(--ground); background: var(--ink); padding: 30px 56px 28px; border-radius: 999px; }
+      .url { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 64px; color: var(--accent); letter-spacing: 0.01em; }
+      .hair { width: 120px; height: 1px; background: var(--muted); margin: 0 auto; }
+
+      .ground-light { background:#eceae5; }
+      .ink-dark { color:#151515; }
+      .multiply { mix-blend-mode:multiply; position:absolute; left:100px; top:210px; width:880px; }
+      .shade-top { height:1150px !important; background:linear-gradient(180deg, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.62) 40%, rgba(10,10,10,0) 100%) !important; }
+      .tag { font-family:var(--sans); font-weight:500; font-size:30px; letter-spacing:0.28em; text-transform:uppercase; color:#44433f; text-align:center; position:absolute; left:0; right:0; }
+      .ask { font-family:var(--serif); font-style:italic; font-weight:500; font-size:70px; color:var(--ink); line-height:1.06; }
+    </style>
+    </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="12" data-width="1080" data-height="1920">
+      <audio id="mix" class="clip" src="assets/mix.wav" data-start="0" data-duration="12" data-track-index="9"></audio>
+      <div id="s1" class="clip scene " data-start="0" data-duration="3.2" data-track-index="0"><div id="p1" class="photo" style="background-image:url(assets/s1.jpg);background-position:50% 50%;"></div><div class="shade-top"></div><div class="vignette"></div><div class="text-block " style="top:430px;"><span class="line serif-l" data-split>Bright silver</span><span class="line serif-l" data-split>or oxidized?</span></div></div>
+<div id="s2" class="clip scene " data-start="2.7" data-duration="2.8" data-track-index="1"><div id="p2" class="photo" style="background-image:url(assets/s2.jpg);background-position:50% 50%;"></div><div class="shade-top"></div><div class="vignette"></div><div class="text-block " style="top:430px;"><span class="line serif-l" data-split>Catches</span><span class="line serif-l" data-split>every light.</span></div></div>
+<div id="s3" class="clip scene " data-start="5.0" data-duration="3.3" data-track-index="2"><div id="p3" class="photo" style="background-image:url(assets/s3.jpg);background-position:50% 50%;"></div><div class="shade-top"></div><div class="vignette"></div><div class="text-block " style="top:430px;"><span class="line serif-l" data-split>Every leaf picked</span><span class="line serif-l" data-split>out in shadow.</span></div></div>
+<div id="s4" class="clip scene" data-start="7.6" data-duration="4.4" data-track-index="4">
+        <div class="glow" style="top:600px;"></div>
+        <div id="s4-ring" class="ring" style="width:420px;height:539px;margin:0;left:330px;top:330px;"><img src="assets/ring-oxidized-cut.png" style="width:100%;height:100%;display:block;" alt="" />
+          <div class="sweep-wrap" style="-webkit-mask-image:url(assets/ring-oxidized-cut.png);mask-image:url(assets/ring-oxidized-cut.png);"><div id="s4-sweep" class="sweep"></div></div></div>
+        <div class="text-block" style="top:940px;">
+          <div id="wm" class="wordmark">EVERLORE</div>
+          <div id="hair" class="hair" style="margin-top:30px;"></div>
+          <div class="caps" style="font-size:44px;margin-top:34px;color:var(--accent);">The Waking Tree</div>
+          <div id="cta-wrap" style="margin-top:46px;"><span id="cta" class="cta">Back it on Kickstarter</span></div>
+          <div id="url" class="url" style="margin-top:38px;">everlore.ca/ks &nbsp;·&nbsp; @everlore.ca</div>
+          <div class="ask" style="margin-top:50px;">Which one is yours?</div>
+        </div>
+      </div>
+    </div>
+    <script>
+const OUT="expo.out",IN="power3.in",INOUT="power2.inOut";
+document.querySelectorAll("[data-split]").forEach((el)=>{const w=el.textContent.trim().split(/\s+/);el.innerHTML=w.map((x)=>`<span class="w">${x}</span>`).join(" ");});
+const words=(s)=>document.querySelectorAll(s+" .w");
+window.__timelines=window.__timelines||{};const tl=gsap.timeline({paused:true});
+tl.fromTo("#p1",{scale:1.10,y:30},{...{scale:1.02,y:-10},duration:3.6,ease:"none"},0);
+tl.fromTo(words("#s1"),{yPercent:108,rotate:2.5},{yPercent:0,rotate:0,duration:0.85,ease:OUT,stagger:0.075},0.15);
+tl.to(words("#s1"),{yPercent:-108,duration:0.42,ease:IN,stagger:0.03},2.45);
+tl.fromTo("#s2",{opacity:0,filter:"blur(16px)"},{opacity:1,filter:"blur(0px)",duration:0.7,ease:OUT},2.7);
+tl.fromTo("#p2",{scale:1.02,x:-24},{...{scale:1.09,x:24},duration:3.1999999999999997,ease:"none"},2.7);
+tl.fromTo(words("#s2"),{yPercent:108,rotate:2.5},{yPercent:0,rotate:0,duration:0.85,ease:OUT,stagger:0.075},3.2);
+tl.to(words("#s2"),{yPercent:-108,duration:0.42,ease:IN,stagger:0.03},4.75);
+tl.fromTo("#s3",{opacity:0,filter:"blur(16px)"},{opacity:1,filter:"blur(0px)",duration:0.7,ease:OUT},5.0);
+tl.fromTo("#p3",{scale:1.10,y:30},{...{scale:1.02,y:-10},duration:3.6999999999999997,ease:"none"},5.0);
+tl.fromTo(words("#s3"),{yPercent:108,rotate:2.5},{yPercent:0,rotate:0,duration:0.85,ease:OUT,stagger:0.075},5.5);
+tl.to(words("#s3"),{yPercent:-108,duration:0.42,ease:IN,stagger:0.03},7.550000000000001);
+tl.fromTo("#s4",{opacity:0,filter:"blur(16px)"},{opacity:1,filter:"blur(0px)",duration:0.7,ease:OUT},7.6);
+tl.fromTo("#s4-ring",{opacity:0,scale:0.9,y:30},{opacity:1,scale:1,y:0,duration:1.1,ease:OUT},7.699999999999999);
+tl.fromTo("#s4-sweep",{xPercent:0},{xPercent:330,duration:1.5,ease:INOUT},8.6);
+tl.fromTo("#wm",{opacity:0,y:24},{opacity:1,y:0,duration:0.9,ease:OUT},7.949999999999999);
+tl.fromTo("#hair",{scaleX:0},{scaleX:1,duration:0.7,ease:OUT},8.35);
+tl.fromTo("#cta-wrap",{opacity:0,y:24},{opacity:1,y:0,duration:0.8,ease:OUT},8.299999999999999);
+tl.fromTo("#url",{opacity:0},{opacity:1,duration:0.8,ease:"power2.out"},8.549999999999999);
+tl.fromTo(".ask",{opacity:0,y:20},{opacity:1,y:0,duration:0.8,ease:OUT},8.799999999999999);
+window.__timelines["main"]=tl;
+    </script>
+  </body>
+</html>
