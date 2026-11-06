@@ -49,16 +49,16 @@
       "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/bf/bfd153422eeabcad894155e28c3879786d2d788a00727bb4b0c7822cc35f3217"
     },
     "assets/ring-silver-cut.png": {
-      "hash": "8cfdda5a6b275309b0ef55236c7b04293a8f40dc9b2d7383cbbf0d4c4db12cdd",
-      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/8c/8cfdda5a6b275309b0ef55236c7b04293a8f40dc9b2d7383cbbf0d4c4db12cdd"
+      "hash": "c2abf99443a2f102084581f20ca1a7c9a6e47326052908398a0329ac359bd002",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/c2/c2abf99443a2f102084581f20ca1a7c9a6e47326052908398a0329ac359bd002"
     },
     "hyperframes.json": {
       "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
       "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
     },
     "index.html": {
-      "hash": "ae29271712f479dcfe1906a262f7c1e4ba4110b0f8b34e50cc8243af1a8c78ca",
-      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/ae/ae29271712f479dcfe1906a262f7c1e4ba4110b0f8b34e50cc8243af1a8c78ca"
+      "hash": "71921b5a4bf8d4db3967a889df6d012ed5f66300661aceea5fedd001982ee1b1",
+      "content": "/home/runner/.cache/hyperframes/history/e564fb67-582b-4b14-8847-96661d4f67d7/blobs/71/71921b5a4bf8d4db3967a889df6d012ed5f66300661aceea5fedd001982ee1b1"
     },
     "meta.json": {
       "hash": "3cfccbb784842ef9e00e7b2d37df961388f09e687f177bf277472724acce9c00",
@@ -90,8 +90,8 @@
   },
   "renders": {
     "latest": {
-      "id": "fd323d8a-d7e6-4765-8f00-02d9de0e958d",
-      "completedAt": 1793974671489,
+      "id": "bfd35734-cfc0-455b-9a4f-d13fd0dd00ed",
+      "completedAt": 1793975936676,
       "output": "/home/runner/work/video-studio/video-studio/out/ana-waking-tree.mp4",
       "status": "completed",
       "revision": null
