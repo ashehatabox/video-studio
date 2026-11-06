@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "historyId": "e84faf2c-7a96-4ab2-a121-f6cb2b5e5300",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3",
+      "content": "/home/runner/.cache/hyperframes/history/e84faf2c-7a96-4ab2-a121-f6cb2b5e5300/blobs/1a/1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3"
+    },
+    "CLAUDE.md": {
+      "hash": "1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3",
+      "content": "/home/runner/.cache/hyperframes/history/e84faf2c-7a96-4ab2-a121-f6cb2b5e5300/blobs/1a/1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "/home/runner/.cache/hyperframes/history/e84faf2c-7a96-4ab2-a121-f6cb2b5e5300/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "bb26a8f483c4b8ed34f95e1a3fd8bd97e06440351dcb1c24c71d2abdbb1a1d15",
+      "content": "/home/runner/.cache/hyperframes/history/e84faf2c-7a96-4ab2-a121-f6cb2b5e5300/blobs/bb/bb26a8f483c4b8ed34f95e1a3fd8bd97e06440351dcb1c24c71d2abdbb1a1d15"
+    },
+    "meta.json": {
+      "hash": "7891d446bdd2368f7c2fadcc342a602ddfa8c1589fb9e78bda54d8c8053860b2",
+      "content": "/home/runner/.cache/hyperframes/history/e84faf2c-7a96-4ab2-a121-f6cb2b5e5300/blobs/78/7891d446bdd2368f7c2fadcc342a602ddfa8c1589fb9e78bda54d8c8053860b2"
+    },
+    "package-lock.json": {
+      "hash": "7fba191a826aa5fa33b56fbebdef2ee404492157ca2b548b5bb12d398988f481",
+      "content": "/home/runner/.cache/hyperframes/history/e84faf2c-7a96-4ab2-a121-f6cb2b5e5300/blobs/7f/7fba191a826aa5fa33b56fbebdef2ee404492157ca2b548b5bb12d398988f481"
+    },
+    "package.json": {
+      "hash": "bb7426d123dc2c68cf431038233eb59ccfc9dc9867007b72fc831c14f0d2b113",
+      "content": "/home/runner/.cache/hyperframes/history/e84faf2c-7a96-4ab2-a121-f6cb2b5e5300/blobs/bb/bb7426d123dc2c68cf431038233eb59ccfc9dc9867007b72fc831c14f0d2b113"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "d734fe64-285b-4f7b-ac1c-3ce908cfae32",
+      "completedAt": 1793964746781,
+      "output": "/home/runner/work/video-studio/video-studio/out/hello-test.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}
