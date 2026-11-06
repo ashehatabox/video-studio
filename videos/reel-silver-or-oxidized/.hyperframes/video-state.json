@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "historyId": "349c1a6b-882b-459b-a13a-41154fc54c58",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/1a/1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3"
+    },
+    "CLAUDE.md": {
+      "hash": "1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/1a/1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3"
+    },
+    "assets/fonts/cormorant-garamond-latin-400-normal.woff2": {
+      "hash": "8048ac209bec741e1c29cd0cfac5aac1c0c2ba8c3ddbd4a58fa9bd92ef5c63c2",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/80/8048ac209bec741e1c29cd0cfac5aac1c0c2ba8c3ddbd4a58fa9bd92ef5c63c2"
+    },
+    "assets/fonts/cormorant-garamond-latin-500-italic.woff2": {
+      "hash": "4fb55a7a6d564d428061fe12c82c896264bcc8b7f0b52840bf88e0db5b91256f",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/4f/4fb55a7a6d564d428061fe12c82c896264bcc8b7f0b52840bf88e0db5b91256f"
+    },
+    "assets/fonts/italiana-latin-400-normal.woff2": {
+      "hash": "5079c87a4e86c58e8cd4f18ec2d3255918b7d565708ed934b15c4710301f838c",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/50/5079c87a4e86c58e8cd4f18ec2d3255918b7d565708ed934b15c4710301f838c"
+    },
+    "assets/fonts/manrope-latin-400-normal.woff2": {
+      "hash": "849290ef12a2eeb9af5c11924120d11aa4ae8b435ed3347d7fc8bc240c293ca3",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/84/849290ef12a2eeb9af5c11924120d11aa4ae8b435ed3347d7fc8bc240c293ca3"
+    },
+    "assets/fonts/manrope-latin-500-normal.woff2": {
+      "hash": "19874318747181a650eda439c37955220b849d9c4797c9e0718ee67d4bf929bc",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/19/19874318747181a650eda439c37955220b849d9c4797c9e0718ee67d4bf929bc"
+    },
+    "assets/ring-oxidized-cut.png": {
+      "hash": "bfd153422eeabcad894155e28c3879786d2d788a00727bb4b0c7822cc35f3217",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/bf/bfd153422eeabcad894155e28c3879786d2d788a00727bb4b0c7822cc35f3217"
+    },
+    "assets/ring-silver-cut.png": {
+      "hash": "c2abf99443a2f102084581f20ca1a7c9a6e47326052908398a0329ac359bd002",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/c2/c2abf99443a2f102084581f20ca1a7c9a6e47326052908398a0329ac359bd002"
+    },
+    "assets/s1.jpg": {
+      "hash": "c04429a0d530479791fe2e731c64929dd402c66fb68a3772c6f5e8c208514e51",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/c0/c04429a0d530479791fe2e731c64929dd402c66fb68a3772c6f5e8c208514e51"
+    },
+    "assets/s2.jpg": {
+      "hash": "f4e6fd3d64abf2c0de1eb305af7ee4ad8bc5db953d2d506d60dddb696a654691",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/f4/f4e6fd3d64abf2c0de1eb305af7ee4ad8bc5db953d2d506d60dddb696a654691"
+    },
+    "assets/s3.jpg": {
+      "hash": "4d334ddda72c424eedfa8a948cbf10e283e3e1cb7638104af75a0ade88d49986",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/4d/4d334ddda72c424eedfa8a948cbf10e283e3e1cb7638104af75a0ade88d49986"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "eb0c4c195c891f74bb85e59e97e122fa1f35833d8280268d5d0e3a0085400706",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/eb/eb0c4c195c891f74bb85e59e97e122fa1f35833d8280268d5d0e3a0085400706"
+    },
+    "meta.json": {
+      "hash": "caffdb287dcc3e36b01692b5d86cb38247531bec1918034e0cb4273d2fc9dcfb",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/ca/caffdb287dcc3e36b01692b5d86cb38247531bec1918034e0cb4273d2fc9dcfb"
+    },
+    "package-lock.json": {
+      "hash": "564f9413a61f82da876e7d720fb25037c28c706de279266b770fff2195514a3b",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/56/564f9413a61f82da876e7d720fb25037c28c706de279266b770fff2195514a3b"
+    },
+    "package.json": {
+      "hash": "c6bec679f5dd6783ad0ee57093a15e4896efa53e5de969fefca07bc9bc79ee71",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/c6/c6bec679f5dd6783ad0ee57093a15e4896efa53e5de969fefca07bc9bc79ee71"
+    },
+    "assets/mix.wav": {
+      "hash": "5b55791aa0577ac857cb4ab7659a40366bdc131ecacb858c05af09256a743bae",
+      "content": "/home/runner/.cache/hyperframes/history/349c1a6b-882b-459b-a13a-41154fc54c58/blobs/5b/5b55791aa0577ac857cb4ab7659a40366bdc131ecacb858c05af09256a743bae"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "f5e0f028-f8e4-4fc8-8adf-19f07ee8be72",
+      "completedAt": 1793985392532,
+      "output": "/home/runner/work/video-studio/video-studio/out/reel-silver-or-oxidized.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}

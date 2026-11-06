@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "historyId": "a797abef-2bb0-4b4f-bf9b-4c54114a0411",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/1a/1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3"
+    },
+    "CLAUDE.md": {
+      "hash": "1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/1a/1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3"
+    },
+    "assets/fonts/cormorant-garamond-latin-400-normal.woff2": {
+      "hash": "8048ac209bec741e1c29cd0cfac5aac1c0c2ba8c3ddbd4a58fa9bd92ef5c63c2",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/80/8048ac209bec741e1c29cd0cfac5aac1c0c2ba8c3ddbd4a58fa9bd92ef5c63c2"
+    },
+    "assets/fonts/cormorant-garamond-latin-500-italic.woff2": {
+      "hash": "4fb55a7a6d564d428061fe12c82c896264bcc8b7f0b52840bf88e0db5b91256f",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/4f/4fb55a7a6d564d428061fe12c82c896264bcc8b7f0b52840bf88e0db5b91256f"
+    },
+    "assets/fonts/italiana-latin-400-normal.woff2": {
+      "hash": "5079c87a4e86c58e8cd4f18ec2d3255918b7d565708ed934b15c4710301f838c",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/50/5079c87a4e86c58e8cd4f18ec2d3255918b7d565708ed934b15c4710301f838c"
+    },
+    "assets/fonts/manrope-latin-400-normal.woff2": {
+      "hash": "849290ef12a2eeb9af5c11924120d11aa4ae8b435ed3347d7fc8bc240c293ca3",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/84/849290ef12a2eeb9af5c11924120d11aa4ae8b435ed3347d7fc8bc240c293ca3"
+    },
+    "assets/fonts/manrope-latin-500-normal.woff2": {
+      "hash": "19874318747181a650eda439c37955220b849d9c4797c9e0718ee67d4bf929bc",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/19/19874318747181a650eda439c37955220b849d9c4797c9e0718ee67d4bf929bc"
+    },
+    "assets/ring-oxidized-cut.png": {
+      "hash": "bfd153422eeabcad894155e28c3879786d2d788a00727bb4b0c7822cc35f3217",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/bf/bfd153422eeabcad894155e28c3879786d2d788a00727bb4b0c7822cc35f3217"
+    },
+    "assets/ring-silver-cut.png": {
+      "hash": "c2abf99443a2f102084581f20ca1a7c9a6e47326052908398a0329ac359bd002",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/c2/c2abf99443a2f102084581f20ca1a7c9a6e47326052908398a0329ac359bd002"
+    },
+    "assets/s2.jpg": {
+      "hash": "79c5db00d543b7a244e410b492fb4e811dd391f12210794b5af2bb16ef3f35a2",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/79/79c5db00d543b7a244e410b492fb4e811dd391f12210794b5af2bb16ef3f35a2"
+    },
+    "assets/s3.jpg": {
+      "hash": "98cffd062343849b2d0050159739c2b274ea5715500ad3d8f16f7abfddb9432e",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/98/98cffd062343849b2d0050159739c2b274ea5715500ad3d8f16f7abfddb9432e"
+    },
+    "assets/s4.jpg": {
+      "hash": "b3b8a917f4b97afe194280500acecaa73a1d2354db3653d6b96a67a66c4937cc",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/b3/b3b8a917f4b97afe194280500acecaa73a1d2354db3653d6b96a67a66c4937cc"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "215d4f8f04ea958e2bb8c1428352041d0bbb0ae3b4735d8e3a1208d4940294d6",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/21/215d4f8f04ea958e2bb8c1428352041d0bbb0ae3b4735d8e3a1208d4940294d6"
+    },
+    "meta.json": {
+      "hash": "a2e658c964f20a963e35e237db54ae63570b64aa2123e39fba64f12619fd7b91",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/a2/a2e658c964f20a963e35e237db54ae63570b64aa2123e39fba64f12619fd7b91"
+    },
+    "package-lock.json": {
+      "hash": "09754cc3f073509da8dd5aa4e9099109cf6941b43969751406ab0d920c66fc4d",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/09/09754cc3f073509da8dd5aa4e9099109cf6941b43969751406ab0d920c66fc4d"
+    },
+    "package.json": {
+      "hash": "314e8e15095d9a5ed25155295eba89d79f346edb53514036c7fbfa3043b86f70",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/31/314e8e15095d9a5ed25155295eba89d79f346edb53514036c7fbfa3043b86f70"
+    },
+    "assets/mix.wav": {
+      "hash": "5501ff252a0e4d6125477787abab528947b78d09d6f1d8eaebb516dc93b7f577",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/55/5501ff252a0e4d6125477787abab528947b78d09d6f1d8eaebb516dc93b7f577"
+    },
+    "assets/s1.jpg": {
+      "hash": "f7dae6b0f7269b41659c4d9cc5e7070e72d35c6994b705dd91d90101896f21ee",
+      "content": "/home/runner/.cache/hyperframes/history/a797abef-2bb0-4b4f-bf9b-4c54114a0411/blobs/f7/f7dae6b0f7269b41659c4d9cc5e7070e72d35c6994b705dd91d90101896f21ee"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "f0c707a5-bf70-45fe-97d4-969f4e04fc7c",
+      "completedAt": 1793985463760,
+      "output": "/home/runner/work/video-studio/video-studio/out/reel-tree-that-woke-up.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}
