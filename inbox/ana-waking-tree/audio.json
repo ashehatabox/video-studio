@@ -1,0 +1,16 @@
+{
+  "voice": "af_heart",
+  "speed": 0.88,
+  "lines": [
+    {"id": "vo01", "text": "It started as an idea..."},
+    {"id": "vo02", "text": "a tree that woke up."},
+    {"id": "vo03", "text": "The Waking Tree."},
+    {"id": "vo04", "text": "A reminder... you can do anything."},
+    {"id": "vo05", "text": "Back it on Kickstarter. Link in bio."},
+    {"id": "alt_vo01", "voice": "af_bella", "text": "It started as an idea..."},
+    {"id": "alt_vo04", "voice": "bf_emma", "text": "A reminder... you can do anything."}
+  ],
+  "music": [
+    {"id": "music_classical_vibes_4", "url": "https://assets.mixkit.co/music/684/684.mp3"}
+  ]
+}

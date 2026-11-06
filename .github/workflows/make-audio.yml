@@ -1,0 +1,77 @@
+name: Make audio
+
+# Generates voiceover lines (HyperFrames TTS, local Kokoro model, no API key)
+# and downloads free-for-commercial music for a project.
+# Input file: inbox/<project>/audio.json
+# {
+#   "voice": "af_heart", "speed": 0.9,
+#   "lines": [{"id": "vo01", "text": "..."}],
+#   "music": [{"id": "music", "url": "https://assets.mixkit.co/music/684/684.mp3"}]
+# }
+# Output: inbox/<project>/audio/*.wav|mp3 + voices.txt, committed back to the repo.
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: "Folder name under inbox/"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  audio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      CI: "true"
+      HYPERFRAMES_AGENT: "1"
+      HYPERFRAMES_NO_UPDATE_CHECK: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg jq >/dev/null
+
+      - name: Generate voiceover and fetch music
+        run: |
+          P="inbox/${{ inputs.project }}"
+          CFG="$P/audio.json"
+          OUT="$P/audio"
+          mkdir -p "$OUT"
+          VOICE=$(jq -r '.voice // "af_heart"' "$CFG")
+          SPEED=$(jq -r '.speed // 1' "$CFG")
+          npx -y hyperframes@latest tts --list > "$OUT/voices.txt" 2>&1 || true
+          n=$(jq '.lines | length' "$CFG")
+          for i in $(seq 0 $((n-1))); do
+            id=$(jq -r ".lines[$i].id" "$CFG")
+            text=$(jq -r ".lines[$i].text" "$CFG")
+            v=$(jq -r ".lines[$i].voice // \"$VOICE\"" "$CFG")
+            echo "TTS $id ($v): $text"
+            npx -y hyperframes@latest tts "$text" --voice "$v" --speed "$SPEED" --output "$OUT/$id.wav"
+          done
+          m=$(jq '.music | length // 0' "$CFG")
+          for i in $(seq 0 $((m-1))); do
+            id=$(jq -r ".music[$i].id" "$CFG")
+            url=$(jq -r ".music[$i].url" "$CFG")
+            curl -sSfL "$url" -o "$OUT/$id.mp3"
+          done
+          for f in "$OUT"/*.wav "$OUT"/*.mp3; do
+            [ -f "$f" ] && echo "$f $(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")s"
+          done
+
+      - name: Save to repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add inbox/
+          git diff --cached --quiet || git commit -m "Audio: ${{ inputs.project }}"
+          git pull --rebase origin main
+          git push origin HEAD:main
