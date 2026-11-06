@@ -1,0 +1,50 @@
+{
+  "name": "Everlore",
+  "product": "The Waking Tree ring",
+  "tagline": "A reminder you can do anything",
+  "website": "https://everlore.ca",
+  "audience": "People who want a meaningful ring for themselves or to gift someone who needs the reminder",
+  "story": "Started from a photo of a driftwood 'walking tree' sculpture on a Vancouver road trip; refined from an AI image draft into a design, then 3D-modelled and cast by a jewellery workshop. 'Waking' is an intentional misspelling of 'walking': a tree that woke up. Never correct it to Walking Tree.",
+  "voice": {
+    "tone": "warm, calm, quietly confident, a little poetic; short sentences",
+    "words_to_use": ["wake", "reminder", "you can do anything", "made by hand", "from an idea"],
+    "words_to_avoid": ["luxury", "bling", "cheap", "white gold", "walking tree"]
+  },
+  "colors": {
+    "background": "#151515",
+    "text": "#ECEAE5",
+    "accent": "#C9B99A",
+    "muted": "#8C8A85"
+  },
+  "fonts": {
+    "display": "Italiana",
+    "serif": "Cormorant Garamond",
+    "body": "Manrope",
+    "files": "assets/fonts/"
+  },
+  "logo": {
+    "wordmark": "EVERLORE set in Italiana, wide letter-spacing, moon-white on near-black",
+    "primary": "assets/logo.svg"
+  },
+  "cta": {
+    "default": "Back The Waking Tree on Kickstarter",
+    "url": "everlore.ca/ks",
+    "kickstarter": "https://www.kickstarter.com/projects/everlore/the-waking-tree-ring-a-reminder-you-can-do-anything",
+    "status": "live (Nov 2026)"
+  },
+  "product_facts": {
+    "material": "sterling silver (925)",
+    "engraving": "THE WAKING TREE inside the band",
+    "finishes_photographed": ["bright silver", "oxidized silver"],
+    "note": "Only state prices, goal or stats on screen after confirming them on the live Kickstarter page."
+  },
+  "voiceover": {
+    "voice": "warm female voice, soft and unhurried",
+    "pace": "slow",
+    "language": "en"
+  },
+  "music_mood": "soft piano with light strings, 70-90 BPM, gentle lift at the reveal",
+  "motion_style": "Quiet luxury jewellery film: slow push-ins, masked serif reveals, one light sweep across the ring, nothing loud",
+  "canva_brand_kit": "",
+  "notes": "Look named 'Oxidized' (chosen over Grove and Storybook). No plain-font logos, no amateur layouts. Real photos only for the ring."
+}
