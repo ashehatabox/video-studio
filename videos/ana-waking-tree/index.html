@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Italiana"; src: url("assets/fonts/italiana-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Cormorant Garamond"; src: url("assets/fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Cormorant Garamond"; src: url("assets/fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2"); font-weight: 500; font-style: italic; }
+      @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+
+      :root {
+        --ground: #151515;
+        --ink: #eceae5;
+        --accent: #c9b99a;
+        --muted: #8c8a85;
+        --display: "Italiana", serif;
+        --serif: "Cormorant Garamond", serif;
+        --sans: "Manrope", sans-serif;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); color: var(--ink); }
+      .clip { position: absolute; inset: 0; }
+      .scene { overflow: hidden; }
+
+      /* type */
+      .line { display: block; overflow: hidden; padding: 0.06em 0 0.12em; }
+      .w { display: inline-block; will-change: transform; }
+      .serif-xl { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 92px; line-height: 1.02; letter-spacing: -0.01em; }
+      .serif-l { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 78px; line-height: 1.04; letter-spacing: -0.01em; }
+      .caps { font-family: var(--display); letter-spacing: 0.32em; text-transform: uppercase; }
+      .label { font-family: var(--sans); font-weight: 500; font-size: 26px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); }
+      .text-block { position: absolute; left: 110px; right: 110px; text-align: center; }
+
+      /* scene 1 + 2: rings on ground */
+      .ring { position: absolute; left: 50%; top: 50%; transform-origin: 50% 50%; }
+      .sweep-wrap { position: absolute; inset: 0; -webkit-mask-size: 100% 100%; mask-size: 100% 100%; overflow: hidden; }
+      .sweep { position: absolute; top: -20%; left: -60%; width: 60%; height: 140%;
+        background: linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,250,240,0.55) 50%, rgba(255,255,255,0) 100%); }
+      .glow { position: absolute; left: 50%; top: 50%; width: 1300px; height: 1300px; margin: -650px 0 0 -650px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(236,234,229,0.10) 0%, rgba(236,234,229,0.04) 35%, rgba(21,21,21,0) 65%); }
+
+      /* photos */
+      .photo { position: absolute; inset: -2px; background-size: cover; background-position: center; transform-origin: 50% 60%; }
+      .shade-top { position: absolute; left: 0; right: 0; top: 0; height: 980px;
+        background: linear-gradient(180deg, rgba(10,10,10,0.72) 0%, rgba(10,10,10,0.45) 45%, rgba(10,10,10,0) 100%); }
+      .shade-bottom { position: absolute; left: 0; right: 0; bottom: 0; height: 520px;
+        background: linear-gradient(0deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0) 100%); }
+      .vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 55%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.45) 100%); }
+
+      /* hero */
+      #hero-iris { position: absolute; inset: 0; background: var(--ground); }
+
+      /* end card */
+      .wordmark { font-family: var(--display); font-size: 104px; letter-spacing: 0.34em; text-indent: 0.34em; }
+      .cta { display: inline-block; font-family: var(--sans); font-weight: 500; font-size: 40px; letter-spacing: 0.16em; text-transform: uppercase;
+        color: var(--ground); background: var(--ink); padding: 30px 56px 28px; border-radius: 999px; }
+      .url { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 64px; color: var(--accent); letter-spacing: 0.01em; }
+      .hair { width: 120px; height: 1px; background: var(--muted); margin: 0 auto; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="26" data-width="1080" data-height="1920">
+
+      <!-- Audio: voiceover + music + chime, pre-mixed and mastered to -14 LUFS -->
+      <audio id="mix" class="clip" src="assets/mix.wav" data-start="0" data-duration="26" data-track-index="9"></audio>
+
+      <!-- S1: oxidized ring, "It started as an idea." -->
+      <div id="s1" class="clip scene" data-start="0" data-duration="4.3" data-track-index="0">
+        <div class="glow"></div>
+        <div id="s1-ring" class="ring" style="width:669px;height:914px;margin:-500px 0 0 -334px;">
+          <img src="assets/ring-oxidized-cut.png" style="width:100%;height:100%;display:block;" alt="" />
+          <div class="sweep-wrap" style="-webkit-mask-image:url(assets/ring-oxidized-cut.png);mask-image:url(assets/ring-oxidized-cut.png);">
+            <div id="s1-sweep" class="sweep"></div>
+          </div>
+        </div>
+        <div class="text-block" style="top:1470px;">
+          <span class="line serif-xl" data-split>It started as an idea.</span>
+        </div>
+      </div>
+
+      <!-- S2: a branch is drawn, then the bright silver ring wakes up -->
+      <div id="s2" class="clip scene" data-start="3.6" data-duration="4.0" data-track-index="1">
+        <div class="glow"></div>
+        <svg id="branch" width="1080" height="1920" viewBox="0 0 1080 1920" style="position:absolute;inset:0;">
+          <g fill="none" stroke="#ECEAE5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path class="draw" d="M540 1360 C 548 1250, 520 1150, 548 1040 C 572 945, 540 860, 566 760 C 586 690, 560 620, 590 540" />
+            <path class="draw" d="M552 1080 C 610 1040, 660 1030, 712 980" />
+            <path class="draw" d="M560 900 C 500 860, 450 850, 404 800" />
+            <path class="draw" d="M574 700 C 630 670, 668 640, 700 590" />
+            <path class="draw" d="M712 980 C 740 940, 790 930, 812 960 C 784 990, 742 998, 712 980 Z" />
+            <path class="draw" d="M404 800 C 380 760, 330 750, 306 778 C 332 806, 376 814, 404 800 Z" />
+            <path class="draw" d="M700 590 C 712 548, 756 530, 780 552 C 764 586, 726 600, 700 590 Z" />
+            <path class="draw" d="M590 540 C 578 500, 600 456, 632 452 C 640 488, 620 524, 590 540 Z" />
+          </g>
+        </svg>
+        <div id="s2-ring" class="ring" style="width:685px;height:878px;margin:-480px 0 0 -342px;">
+          <img src="assets/ring-silver-cut.png" style="width:100%;height:100%;display:block;" alt="" />
+        </div>
+        <div class="text-block" style="top:1470px;">
+          <span class="line serif-xl" data-split>a tree that woke up.</span>
+        </div>
+      </div>
+
+      <!-- S3: Ana, hand against the sea -->
+      <div id="s3" class="clip scene" data-start="7.2" data-duration="3.8" data-track-index="2">
+        <div id="p1" class="photo" style="background-image:url(assets/ana-hand-sea.jpg);"></div>
+        <div class="shade-top"></div><div class="vignette"></div>
+        <div class="text-block" style="top:430px;">
+          <span class="line serif-l" data-split>From an idea to something</span>
+          <span class="line serif-l" data-split>you can actually wear.</span>
+        </div>
+      </div>
+
+      <!-- S4: held hands -->
+      <div id="s4" class="clip scene" data-start="10.7" data-duration="3.4" data-track-index="3">
+        <div id="p2" class="photo" style="background-image:url(assets/ana-hands-held.jpg);"></div>
+        <div class="shade-top"></div><div class="vignette"></div>
+        <div class="text-block" style="top:430px;">
+          <span class="line serif-l" data-split>So proud of</span>
+          <span class="line serif-l" data-split>my best friend.</span>
+        </div>
+      </div>
+
+      <!-- S5: on the beach -->
+      <div id="s5" class="clip scene" data-start="13.8" data-duration="3.4" data-track-index="4">
+        <div id="p3" class="photo" style="background-image:url(assets/ana-beach-knee.jpg);background-position:50% 40%;"></div>
+        <div class="shade-top"></div><div class="vignette"></div>
+        <div class="text-block" style="top:430px;">
+          <span class="line serif-l" data-split>Totally obsessed.</span>
+          <span class="line serif-l" data-split>So beautiful.</span>
+          <span id="sig" class="line label" style="margin-top:34px;color:var(--ink);opacity:0.85;">&mdash; Ana</span>
+        </div>
+      </div>
+
+      <!-- S6: hero, iris opens onto the engraving -->
+      <div id="s6" class="clip scene" data-start="16.8" data-duration="4.6" data-track-index="5">
+        <div id="hero-iris">
+          <div class="glow"></div>
+          <div id="s6-ring" class="ring" style="width:669px;height:914px;margin:-500px 0 0 -334px;">
+            <img src="assets/ring-oxidized-cut.png" style="width:100%;height:100%;display:block;" alt="" />
+            <div class="sweep-wrap" style="-webkit-mask-image:url(assets/ring-oxidized-cut.png);mask-image:url(assets/ring-oxidized-cut.png);">
+              <div id="s6-sweep" class="sweep"></div>
+            </div>
+          </div>
+          <div class="text-block" style="top:1430px;">
+            <span id="hero-title" class="line caps" style="font-size:66px;" data-split>The Waking Tree</span>
+            <span class="line serif-l" style="font-size:64px;margin-top:22px;color:var(--ink);" data-split>A reminder you can do anything.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- S7: end card -->
+      <div id="s7" class="clip scene" data-start="21.1" data-duration="4.9" data-track-index="6">
+        <div class="glow" style="top:640px;"></div>
+        <div id="s7-ring" class="ring" style="width:420px;height:538px;margin:0;left:330px;top:400px;">
+          <img src="assets/ring-silver-cut.png" style="width:100%;height:100%;display:block;" alt="" />
+        </div>
+        <div class="text-block" style="top:1010px;">
+          <div id="wm" class="wordmark">EVERLORE</div>
+          <div id="hair" class="hair" style="margin-top:34px;"></div>
+          <div id="cta-wrap" style="margin-top:58px;"><span id="cta" class="cta">Back it on Kickstarter</span></div>
+          <div id="url" class="url" style="margin-top:44px;">everlore.ca/ks</div>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      // ---- Timeline: every beat lives here (seconds) ----
+      const T = {
+        s1: { start: 0, text: 0.5, sweep: 1.0, exit: 3.7 },
+        s2: { start: 3.6, draw: 3.65, text: 3.8, ring: 5.0, exit: 7.0 },
+        s3: { start: 7.2, text: 7.7, exit: 10.6 },
+        s4: { start: 10.7, text: 11.1, exit: 13.7 },
+        s5: { start: 13.8, text: 14.2, sig: 15.4, exit: 16.8 },
+        s6: { start: 16.8, iris: 16.8, title: 17.3, line: 18.9, sweep: 17.6, exit: 21.0 },
+        s7: { start: 21.1, ring: 21.15, wm: 21.4, cta: 22.1, url: 22.6, end: 26 }
+      };
+
+      const OUT = "expo.out", IN = "power3.in", INOUT = "power2.inOut";
+      const LAND = "back.out(1.15)";
+
+      // split [data-split] lines into word spans (deterministic, at load)
+      document.querySelectorAll("[data-split]").forEach((el) => {
+        const words = el.textContent.trim().split(/\s+/);
+        el.innerHTML = words.map((w) => `<span class="w">${w}</span>`).join(" ");
+      });
+      const words = (sel) => document.querySelectorAll(sel + " .w");
+      const reveal = (tl, sel, at, opts = {}) =>
+        tl.fromTo(words(sel), { yPercent: 108, rotate: 2.5 },
+          { yPercent: 0, rotate: 0, duration: opts.dur || 0.85, ease: OUT, stagger: opts.stagger || 0.075 }, at);
+      const leave = (tl, sel, at) =>
+        tl.to(words(sel), { yPercent: -108, duration: 0.42, ease: IN, stagger: 0.03 }, at);
+
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // ---- S1: oxidized ring, already on screen at frame 0 ----
+      tl.fromTo("#s1-ring", { scale: 1.0, y: 0 }, { scale: 1.07, y: -16, duration: 4.3, ease: "none" }, 0);
+      tl.fromTo("#s1-sweep", { xPercent: 0 }, { xPercent: 330, duration: 1.6, ease: INOUT }, T.s1.sweep);
+      reveal(tl, "#s1 [data-split]", T.s1.text);
+      leave(tl, "#s1 [data-split]", T.s1.exit - 0.2);
+      tl.to("#s1-ring", { opacity: 0, scale: 1.12, filter: "blur(10px)", duration: 0.55, ease: IN }, T.s1.exit);
+
+      // ---- S2: branch draws itself, silver ring wakes up from it ----
+      const paths = document.querySelectorAll("#branch .draw");
+      paths.forEach((p) => { const L = p.getTotalLength(); p.style.strokeDasharray = L; p.style.strokeDashoffset = L; });
+      tl.to(paths, { strokeDashoffset: 0, duration: 1.3, ease: "power2.out", stagger: 0.09 }, T.s2.draw);
+      tl.to("#branch", { opacity: 0, scale: 0.92, transformOrigin: "50% 50%", duration: 0.7, ease: IN }, T.s2.ring - 0.1);
+      tl.fromTo("#s2-ring", { opacity: 0, scale: 0.86, y: 40, filter: "blur(12px)" },
+        { opacity: 1, scale: 1, y: 0, filter: "blur(0px)", duration: 1.2, ease: OUT }, T.s2.ring);
+      tl.to("#s2-ring", { scale: 1.04, duration: 1.5, ease: "none" }, T.s2.ring + 1.2);
+      reveal(tl, "#s2 [data-split]", T.s2.text);
+      leave(tl, "#s2 [data-split]", T.s2.exit - 0.15);
+      tl.to("#s2-ring", { opacity: 0, scale: 1.1, filter: "blur(10px)", duration: 0.5, ease: IN }, T.s2.exit);
+
+      // ---- S3-S5: Ana's photos, each enters already drifting, blur dissolve between ----
+      const photo = (id, scene, start, end, from, to) => {
+        tl.fromTo(scene, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.7, ease: OUT }, start);
+        tl.fromTo(id, from, { ...to, duration: end - start + 0.4, ease: "none" }, start);
+      };
+      photo("#p1", "#s3", T.s3.start, T.s3.exit, { scale: 1.10, y: 30 }, { scale: 1.02, y: -10 });
+      reveal(tl, "#s3 [data-split]", T.s3.text, { stagger: 0.06 });
+      leave(tl, "#s3 [data-split]", T.s3.exit - 0.25);
+
+      photo("#p2", "#s4", T.s4.start, T.s4.exit, { scale: 1.02, x: -20 }, { scale: 1.09, x: 20 });
+      reveal(tl, "#s4 [data-split]", T.s4.text, { stagger: 0.07 });
+      leave(tl, "#s4 [data-split]", T.s4.exit - 0.25);
+
+      photo("#p3", "#s5", T.s5.start, T.s5.exit, { scale: 1.10, y: -20 }, { scale: 1.03, y: 10 });
+      reveal(tl, "#s5 [data-split]", T.s5.text, { stagger: 0.07 });
+      tl.fromTo("#sig", { opacity: 0, y: 14 }, { opacity: 0.85, y: 0, duration: 0.8, ease: OUT }, T.s5.sig);
+
+      // ---- S6: hero, iris opens from the ring's centre onto the engraving ----
+      tl.fromTo("#hero-iris", { clipPath: "circle(0% at 50% 47%)" },
+        { clipPath: "circle(75% at 50% 47%)", duration: 0.9, ease: "power3.out" }, T.s6.iris);
+      tl.fromTo("#s6-ring", { scale: 1.9, x: -180, y: -40, rotate: -6 },
+        { scale: 1.0, x: 0, y: 0, rotate: 0, duration: 2.2, ease: "power3.out" }, T.s6.iris);
+      tl.to("#s6-ring", { scale: 1.04, duration: 2.4, ease: "none" }, T.s6.iris + 2.2);
+      tl.fromTo("#s6-sweep", { xPercent: 0 }, { xPercent: 330, duration: 1.4, ease: INOUT }, T.s6.sweep);
+      reveal(tl, "#hero-title", T.s6.title, { dur: 1.0, stagger: 0.12 });
+      reveal(tl, "#s6 .serif-l", T.s6.line, { stagger: 0.07 });
+      leave(tl, "#s6 [data-split]", T.s6.exit - 0.25);
+      tl.to("#s6-ring", { opacity: 0, y: -60, duration: 0.5, ease: IN }, T.s6.exit - 0.1);
+
+      // ---- S7: end card, CTA holds to the end ----
+      tl.fromTo("#s7-ring", { opacity: 0, y: 50, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 1.1, ease: OUT }, T.s7.ring);
+      tl.to("#s7-ring", { y: -10, duration: 3.6, ease: "none" }, T.s7.ring + 1.1);
+      tl.fromTo("#wm", { opacity: 0, letterSpacing: "0.5em" }, { opacity: 1, letterSpacing: "0.34em", duration: 1.3, ease: OUT }, T.s7.wm);
+      tl.fromTo("#hair", { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: OUT }, T.s7.wm + 0.4);
+      tl.fromTo("#cta", { opacity: 0, y: 30, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: LAND }, T.s7.cta);
+      tl.fromTo("#url", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, ease: OUT }, T.s7.url);
+      tl.to("#cta", { scale: 1.03, duration: 1.2, ease: INOUT, yoyo: true, repeat: 1 }, T.s7.url + 0.9);
+
+      tl.set({}, {}, T.s7.end);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
