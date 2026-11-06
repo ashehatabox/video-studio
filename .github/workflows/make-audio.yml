@@ -38,7 +38,10 @@ jobs:
       - name: Install tools
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg jq >/dev/null
+          sudo apt-get install -y -qq ffmpeg jq espeak-ng >/dev/null
+          python3 -m venv "$RUNNER_TEMP/tts"
+          "$RUNNER_TEMP/tts/bin/pip" install -q kokoro-onnx soundfile
+          echo "HYPERFRAMES_PYTHON=$RUNNER_TEMP/tts/bin/python" >> "$GITHUB_ENV"
 
       - name: Generate voiceover and fetch music
         run: |
