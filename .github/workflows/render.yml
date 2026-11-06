@@ -48,13 +48,19 @@ jobs:
       - name: Install FFmpeg
         run: |
           if ! command -v ffmpeg >/dev/null; then
-            for i in 1 2 3; do
-              timeout 240 sudo apt-get update -qq -o Acquire::Retries=3 && \
-              timeout 300 sudo apt-get install -y -qq --no-install-recommends ffmpeg >/dev/null && break
-              echo "apt attempt $i failed, retrying"; sleep 10
-            done
+            timeout 180 sudo apt-get update -qq -o Acquire::Retries=2 && \
+            timeout 240 sudo apt-get install -y -qq --no-install-recommends ffmpeg >/dev/null || true
+          fi
+          if ! command -v ffmpeg >/dev/null; then
+            echo "apt failed - using static FFmpeg build from GitHub"
+            mkdir -p "$RUNNER_TEMP/ffmpeg"
+            curl -sSfL --retry 3 https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz \
+              | tar -xJ -C "$RUNNER_TEMP/ffmpeg" --strip-components=1
+            echo "$RUNNER_TEMP/ffmpeg/bin" >> "$GITHUB_PATH"
+            export PATH="$RUNNER_TEMP/ffmpeg/bin:$PATH"
           fi
           ffmpeg -version | head -1
+          ffprobe -version | head -1
 
       - name: Work out which projects to render
         id: pick
