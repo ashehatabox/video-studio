@@ -1,0 +1,112 @@
+name: Render video
+
+# Renders HyperFrames projects in videos/<name>/ to MP4.
+# - Runs automatically when files under videos/ change (renders each changed project).
+# - Can be run by hand from the Actions tab with a project name.
+#   If that project folder doesn't exist yet, a starter project is scaffolded (smoke test).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "videos/**"
+  workflow_dispatch:
+    inputs:
+      project:
+        description: "Project folder name under videos/"
+        required: true
+        default: "hello-test"
+      quality:
+        description: "draft, standard or high"
+        required: false
+        default: "high"
+
+concurrency:
+  group: render-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      CI: "true"
+      HYPERFRAMES_AGENT: "1"
+      HYPERFRAMES_NO_UPDATE_CHECK: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install FFmpeg and fonts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-noto fonts-noto-color-emoji >/dev/null
+          ffmpeg -version | head -1
+
+      - name: Work out which projects to render
+        id: pick
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "projects=${{ inputs.project }}" >> "$GITHUB_OUTPUT"
+            echo "quality=${{ inputs.quality }}" >> "$GITHUB_OUTPUT"
+          else
+            changed=$(git diff --name-only HEAD~1 HEAD -- videos/ | cut -d/ -f2 | sort -u | tr '\n' ' ')
+            echo "projects=${changed}" >> "$GITHUB_OUTPUT"
+            echo "quality=high" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Scaffold starter project if missing
+        run: |
+          for p in ${{ steps.pick.outputs.projects }}; do
+            if [ ! -f "videos/$p/index.html" ]; then
+              echo "No project at videos/$p - scaffolding a starter one"
+              mkdir -p videos
+              (cd videos && npx -y hyperframes@latest init "$p" --non-interactive)
+            fi
+          done
+
+      - name: Check environment
+        continue-on-error: true
+        run: |
+          p=$(echo "${{ steps.pick.outputs.projects }}" | awk '{print $1}')
+          [ -n "$p" ] && cd "videos/$p"
+          npx -y hyperframes@latest doctor
+
+      - name: Lint and render
+        run: |
+          mkdir -p out
+          for p in ${{ steps.pick.outputs.projects }}; do
+            [ -d "videos/$p" ] || continue
+            echo "::group::Render $p"
+            (
+              cd "videos/$p"
+              [ -f package.json ] && npm install --no-audit --no-fund
+              npx -y hyperframes@latest lint
+              npx -y hyperframes@latest render --quality "${{ steps.pick.outputs.quality }}" --output "$GITHUB_WORKSPACE/out/$p.mp4"
+            )
+            echo "::endgroup::"
+          done
+          ls -la out
+
+      - name: Upload video(s)
+        uses: actions/upload-artifact@v4
+        with:
+          name: videos-${{ github.run_number }}
+          path: out/*.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload project source (for reference)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: project-source-${{ github.run_number }}
+          path: |
+            videos/
+            !videos/**/node_modules/**
+          retention-days: 7
