@@ -1,0 +1,18 @@
+{
+  "voice": "af_heart",
+  "speed": 0.92,
+  "lines": [
+    {"id": "vo01", "text": "I spelled my ring's name wrong."},
+    {"id": "vo02", "text": "On purpose. And I'm never fixing it."},
+    {"id": "vo03", "text": "It started on a road trip to Vancouver. A driftwood tree, with a walking stick."},
+    {"id": "vo04", "text": "I spent hours turning it into a ring."},
+    {"id": "vo05", "text": "A jewellery workshop shaped it in sterling silver."},
+    {"id": "vo06", "text": "Then... I dropped one letter."},
+    {"id": "vo07", "text": "Not a tree that walks. A tree that woke up."},
+    {"id": "vo08", "text": "A reminder... you can do anything."},
+    {"id": "vo09", "text": "The Waking Tree. Back it on Kickstarter."}
+  ],
+  "music": [
+    {"id": "music_classical_vibes_4", "url": "https://assets.mixkit.co/music/684/684.mp3"}
+  ]
+}
