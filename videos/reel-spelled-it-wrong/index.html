@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Italiana"; src: url("assets/fonts/italiana-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Cormorant Garamond"; src: url("assets/fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Cormorant Garamond"; src: url("assets/fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2"); font-weight: 500; font-style: italic; }
+      @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+
+      :root {
+        --ground: #151515; --ink: #eceae5; --accent: #c9b99a; --muted: #8c8a85;
+        --display: "Italiana", serif; --serif: "Cormorant Garamond", serif; --sans: "Manrope", sans-serif;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); color: var(--ink); }
+      .clip { position: absolute; inset: 0; }
+      .scene { overflow: hidden; }
+
+      .line { display: block; overflow: hidden; padding: 0.06em 0 0.12em; }
+      .w { display: inline-block; will-change: transform; }
+      .serif-xl { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 96px; line-height: 1.02; letter-spacing: -0.01em; }
+      .serif-l { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 82px; line-height: 1.04; letter-spacing: -0.01em; }
+      .label { font-family: var(--sans); font-weight: 500; font-size: 28px; letter-spacing: 0.28em; text-transform: uppercase; }
+      .text-block { position: absolute; left: 90px; right: 90px; text-align: center; }
+      .acc { color: var(--accent); }
+      .ink-dark { color: #151515; }
+      .ground-light { background: #eceae5; }
+
+      .photo { position: absolute; inset: -2px; background-size: cover; background-position: center; transform-origin: 50% 60%; }
+      .shade-top { position: absolute; left: 0; right: 0; top: 0; height: 1150px;
+        background: linear-gradient(180deg, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.6) 42%, rgba(10,10,10,0) 100%); }
+      .vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 55%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.45) 100%); }
+      .multiply { mix-blend-mode: multiply; position: absolute; display: block; }
+
+      .ring { position: absolute; }
+      .ring img { width: 100%; height: 100%; display: block; }
+      .sweep-wrap { position: absolute; inset: 0; -webkit-mask-size: 100% 100%; mask-size: 100% 100%; overflow: hidden; }
+      .sweep { position: absolute; top: -20%; left: -60%; width: 60%; height: 140%;
+        background: linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,250,240,0.6) 50%, rgba(255,255,255,0) 100%); }
+      .glow { position: absolute; left: 50%; width: 1300px; height: 1300px; margin-left: -650px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(236,234,229,0.11) 0%, rgba(236,234,229,0.04) 35%, rgba(21,21,21,0) 65%); }
+
+      /* letter drop */
+      .big { font-family: var(--display); font-size: 170px; line-height: 1; color: var(--ink); }
+      .ltr { position: absolute; top: 700px; }
+      .tree-word { position: absolute; left: 0; right: 0; top: 900px; text-align: center; letter-spacing: 0.10em; text-indent: 0.10em; }
+
+      .wordmark { font-family: var(--display); font-size: 104px; letter-spacing: 0.34em; text-indent: 0.34em; }
+      .caps { font-family: var(--display); letter-spacing: 0.32em; text-transform: uppercase; }
+      .cta { display: inline-block; font-family: var(--sans); font-weight: 500; font-size: 40px; letter-spacing: 0.16em; text-transform: uppercase;
+        color: var(--ground); background: var(--ink); padding: 30px 56px 28px; border-radius: 999px; }
+      .url { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 64px; color: var(--accent); }
+      .hair { width: 120px; height: 1px; background: var(--muted); margin: 0 auto; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32.5" data-width="1080" data-height="1920">
+      <audio id="mix" class="clip" src="assets/mix.wav" data-start="0" data-duration="32.5" data-track-index="20"></audio>
+
+      <!-- s1 hook: engraving -->
+      <div id="s1" class="clip scene ground-light" data-start="0" data-duration="2.7" data-track-index="0">
+        <img id="p1" class="multiply" src="assets/engraving.jpg" style="left:40px;top:600px;width:1000px;transform-origin:64% 60%;" alt="" />
+        <div class="text-block ink-dark" style="top:250px;"><span class="line serif-xl" data-split>I spelled my ring's</span><span class="line serif-xl" data-split>name wrong.</span></div>
+      </div>
+
+      <!-- s2 on purpose -->
+      <div id="s2" class="clip scene" data-start="2.4" data-duration="3.1" data-track-index="1">
+        <div class="glow" style="top:640px;"></div>
+        <div id="s2-ring" class="ring" style="left:250px;top:760px;width:580px;height:745px;"><img src="assets/ring-silver-cut.png" alt="" />
+          <div class="sweep-wrap" style="-webkit-mask-image:url(assets/ring-silver-cut.png);mask-image:url(assets/ring-silver-cut.png);"><div id="s2-sweep" class="sweep"></div></div></div>
+        <div class="text-block" style="top:300px;"><span id="s2a" class="line serif-xl" data-split>On purpose.</span><span id="s2b" class="line serif-l acc" data-split>And I'm never fixing it.</span></div>
+      </div>
+
+      <!-- s3 driftwood -->
+      <div id="s3" class="clip scene" data-start="5.2" data-duration="5.5" data-track-index="2">
+        <div id="p3" class="photo" style="background-image:url(assets/driftwood.jpg);background-position:50% 50%;"></div>
+        <div class="shade-top"></div><div class="vignette"></div>
+        <div id="s3l" class="label text-block" style="top:300px;color:var(--accent);">Vancouver road trip</div>
+        <div id="s3a" class="text-block" style="top:380px;"><span class="line serif-l" data-split>It started with</span><span class="line serif-l" data-split>a piece of driftwood.</span></div>
+        <div id="s3b" class="text-block" style="top:380px;"><span class="line serif-l" data-split>A tree, with</span><span class="line serif-l" data-split>a <em class="acc" style="font-style:italic;">walking</em> stick.</span></div>
+      </div>
+
+      <!-- s4 design -->
+      <div id="s4" class="clip scene ground-light" data-start="10.4" data-duration="3.0" data-track-index="3">
+        <img id="p4" class="multiply" src="assets/design.jpg" style="left:110px;top:700px;width:860px;transform-origin:50% 50%;" alt="" />
+        <div class="label text-block" style="top:300px;color:#5a5853;">The design</div>
+        <div class="text-block ink-dark" style="top:380px;"><span class="line serif-l" data-split>Hours turning it</span><span class="line serif-l" data-split>into a ring.</span></div>
+      </div>
+
+      <!-- s5 workshop -->
+      <div id="s5" class="clip scene" data-start="13.1" data-duration="3.4" data-track-index="4">
+        <div id="p5" class="photo" style="background-image:url(assets/workshop.jpg);background-position:50% 55%;"></div>
+        <div class="shade-top"></div><div class="vignette"></div>
+        <div class="label text-block" style="top:300px;color:var(--accent);">The workshop</div>
+        <div class="text-block" style="top:380px;"><span class="line serif-l" data-split>Shaped by hand</span><span class="line serif-l" data-split>in sterling silver.</span></div>
+      </div>
+
+      <!-- s6 the twist: the letter drops -->
+      <div id="s6" class="clip scene" data-start="16.2" data-duration="4.3" data-track-index="5">
+        <div class="glow" style="top:200px;"></div>
+        <div id="s6-the" class="label text-block" style="top:600px;color:var(--muted);">The</div>
+        <span id="lW" class="big ltr" style="left:139.7px;">W</span>
+        <span id="lA" class="big ltr" style="left:300.6px;">A</span>
+        <span id="lL" class="big ltr" style="left:423.3px;color:var(--accent);">L</span>
+        <span id="lK" class="big ltr" style="left:521.9px;">K</span>
+        <span id="lI" class="big ltr" style="left:641.1px;">I</span>
+        <span id="lN" class="big ltr" style="left:712.1px;">N</span>
+        <span id="lG" class="big ltr" style="left:829.9px;">G</span>
+        <div id="s6-tree" class="big tree-word">TREE</div>
+        <div class="text-block" style="top:1240px;"><span id="s6cap" class="line serif-l" data-split>Then I dropped one letter.</span></div>
+      </div>
+
+      <!-- s7 hands -->
+      <div id="s7a" class="clip scene" data-start="20.3" data-duration="1.9" data-track-index="6">
+        <div id="p7a" class="photo" style="background-image:url(assets/hand1.jpg);background-position:50% 50%;"></div>
+        <div class="shade-top"></div><div class="vignette"></div>
+      </div>
+      <div id="s7b" class="clip scene" data-start="21.9" data-duration="1.9" data-track-index="7">
+        <div id="p7b" class="photo" style="background-image:url(assets/hand2.jpg);background-position:50% 50%;"></div>
+        <div class="shade-top"></div><div class="vignette"></div>
+      </div>
+      <div id="s7c" class="clip scene" data-start="23.5" data-duration="1.8" data-track-index="8">
+        <div id="p7c" class="photo" style="background-image:url(assets/hand4.jpg);background-position:50% 50%;"></div>
+        <div class="shade-top"></div><div class="vignette"></div>
+      </div>
+      <div id="s7t" class="clip" data-start="20.3" data-duration="4.9" data-track-index="9">
+        <div id="s7t1" class="text-block" style="top:330px;"><span class="line serif-l" data-split>Not a tree</span><span class="line serif-l" data-split>that walks.</span></div>
+        <div id="s7t2" class="text-block" style="top:330px;"><span class="line serif-xl" data-split>A tree that</span><span class="line serif-xl acc" data-split>woke up.</span></div>
+      </div>
+
+      <!-- s8 reminder -->
+      <div id="s8" class="clip scene" data-start="25.0" data-duration="2.9" data-track-index="10">
+        <div class="glow" style="top:560px;"></div>
+        <div id="r-sil" class="ring" style="left:110px;top:860px;width:420px;height:539px;"><img src="assets/ring-silver-cut.png" alt="" /></div>
+        <div id="r-oxi" class="ring" style="left:560px;top:850px;width:410px;height:560px;"><img src="assets/ring-oxidized-cut.png" alt="" /></div>
+        <div class="text-block" style="top:330px;"><span class="line serif-xl" data-split>A reminder</span><span class="line serif-xl acc" data-split>you can do anything.</span></div>
+      </div>
+
+      <!-- s9 end card -->
+      <div id="s9" class="clip scene" data-start="27.6" data-duration="4.9" data-track-index="11">
+        <div class="glow" style="top:560px;"></div>
+        <div id="s9-ring" class="ring" style="left:330px;top:330px;width:420px;height:539px;"><img src="assets/ring-silver-cut.png" alt="" />
+          <div class="sweep-wrap" style="-webkit-mask-image:url(assets/ring-silver-cut.png);mask-image:url(assets/ring-silver-cut.png);"><div id="s9-sweep" class="sweep"></div></div></div>
+        <div class="text-block" style="top:940px;">
+          <div id="wm" class="wordmark">EVERLORE</div>
+          <div id="hair" class="hair" style="margin-top:30px;"></div>
+          <div id="s9-name" class="caps" style="font-size:44px;margin-top:34px;color:var(--accent);">The Waking Tree</div>
+          <div id="cta-wrap" style="margin-top:46px;"><span id="cta" class="cta">Back it on Kickstarter</span></div>
+          <div id="url" class="url" style="margin-top:38px;">everlore.ca/ks</div>
+        </div>
+      </div>
+    </div>
+    <script>
+const T={s2:2.4,s3:5.2,s3b:7.9,s4:10.4,s5:13.1,s6:16.2,drop:17.6,s7:20.3,s7b:21.9,s7t2:22.3,s7c:23.5,s8:25.0,s9:27.6};
+const OUT="expo.out",IN="power3.in",INOUT="power2.inOut";
+document.querySelectorAll("[data-split]").forEach((el)=>{
+  const nodes=[...el.childNodes];el.innerHTML="";
+  nodes.forEach((n)=>{
+    if(n.nodeType===3){n.textContent.split(/(\s+)/).forEach((p)=>{if(!p)return;if(/^\s+$/.test(p)){el.append(" ");}else{const s=document.createElement("span");s.className="w";s.textContent=p;el.append(s);}});}
+    else{n.classList.add("w");el.append(n);}
+  });
+});
+const words=(s)=>document.querySelectorAll(s+" .w");
+const rise=(sel,t)=>tl.fromTo(words(sel),{yPercent:108,rotate:2.5},{yPercent:0,rotate:0,duration:0.85,ease:OUT,stagger:0.07},t);
+const fall=(sel,t)=>tl.to(words(sel),{yPercent:-108,duration:0.4,ease:IN,stagger:0.03},t);
+const blurIn=(sel,t)=>tl.fromTo(sel,{opacity:0,filter:"blur(16px)"},{opacity:1,filter:"blur(0px)",duration:0.6,ease:OUT},t);
+window.__timelines=window.__timelines||{};const tl=gsap.timeline({paused:true});
+
+// s1 hook: text already on screen at frame 0, slow push into the engraving
+tl.fromTo("#p1",{scale:1.0},{scale:1.6,duration:2.9,ease:"none"},0);
+fall("#s1",2.2);
+
+// s2
+blurIn("#s2",T.s2);
+tl.fromTo("#s2-ring",{scale:0.92,y:30},{scale:1,y:0,duration:1.2,ease:OUT},T.s2);
+tl.to("#s2-ring",{scale:1.04,duration:1.9,ease:"none"},T.s2+1.2);
+rise("#s2a",T.s2+0.15);
+rise("#s2b",T.s2+1.2);
+tl.fromTo("#s2-sweep",{xPercent:0},{xPercent:330,duration:1.5,ease:INOUT},T.s2+0.9);
+
+// s3 driftwood: two text cards, two-stage camera
+blurIn("#s3",T.s3);
+tl.fromTo("#p3",{scale:1.14,y:40},{scale:1.06,y:0,duration:2.7,ease:"none"},T.s3);
+tl.to("#p3",{scale:1.0,x:-30,duration:2.8,ease:"none"},T.s3b);
+tl.fromTo("#s3l",{opacity:0,y:16},{opacity:1,y:0,duration:0.7,ease:OUT},T.s3+0.2);
+rise("#s3a",T.s3+0.3);
+fall("#s3a",T.s3b-0.45);
+rise("#s3b",T.s3b);
+fall("#s3b",T.s4-0.2);
+
+// s4 design
+blurIn("#s4",T.s4);
+tl.fromTo("#p4",{scale:1.0,y:20},{scale:1.08,y:-10,duration:3.0,ease:"none"},T.s4);
+rise("#s4",T.s4+0.25);
+fall("#s4",T.s5-0.4);
+
+// s5 workshop
+blurIn("#s5",T.s5);
+tl.fromTo("#p5",{scale:1.12,x:20},{scale:1.02,x:-20,duration:3.4,ease:"none"},T.s5);
+rise("#s5",T.s5+0.2);
+fall("#s5",T.s6-0.35);
+
+// s6 the letter drop (hero)
+blurIn("#s6",T.s6);
+tl.fromTo(["#lW","#lA","#lL","#lK","#lI","#lN","#lG","#s6-tree"],{opacity:0,y:40},{opacity:1,y:0,duration:0.9,ease:OUT,stagger:0.05},T.s6+0.05);
+tl.fromTo("#s6-the",{opacity:0},{opacity:1,duration:0.6,ease:OUT},T.s6+0.2);
+rise("#s6cap",T.s6+0.45);
+tl.to("#lL",{y:-150,rotate:-14,duration:1.0,ease:"power2.in"},T.drop);
+tl.to("#lL",{opacity:0,filter:"blur(10px)",duration:0.6,ease:IN},T.drop+0.45);
+tl.to(["#lW","#lA"],{x:49.3,duration:0.9,ease:"power3.inOut"},T.drop+0.75);
+tl.to(["#lK","#lI","#lN","#lG"],{x:-49.3,duration:0.9,ease:"power3.inOut"},T.drop+0.75);
+tl.fromTo("#s6-the",{color:"#8c8a85"},{color:"#c9b99a",duration:0.6,ease:INOUT},T.drop+1.4);
+
+// s7 hands
+blurIn("#s7a",T.s7);
+tl.fromTo("#p7a",{scale:1.12},{scale:1.03,duration:2.0,ease:"none"},T.s7);
+blurIn("#s7b",T.s7b);
+tl.fromTo("#p7b",{scale:1.03,x:-20},{scale:1.1,x:20,duration:1.9,ease:"none"},T.s7b);
+blurIn("#s7c",T.s7c);
+tl.fromTo("#p7c",{scale:1.12,y:20},{scale:1.03,y:-10,duration:1.8,ease:"none"},T.s7c);
+rise("#s7t1",T.s7+0.25);
+fall("#s7t1",T.s7t2-0.45);
+rise("#s7t2",T.s7t2);
+fall("#s7t2",T.s8-0.3);
+
+// s8 reminder
+blurIn("#s8",T.s8);
+tl.fromTo("#r-sil",{opacity:0,x:-40},{opacity:1,x:0,duration:1.1,ease:OUT},T.s8+0.1);
+tl.fromTo("#r-oxi",{opacity:0,x:40},{opacity:1,x:0,duration:1.1,ease:OUT},T.s8+0.25);
+rise("#s8",T.s8+0.3);
+fall("#s8",T.s9-0.3);
+
+// s9 end card
+blurIn("#s9",T.s9);
+tl.fromTo("#s9-ring",{opacity:0,scale:0.9,y:30},{opacity:1,scale:1,y:0,duration:1.1,ease:OUT},T.s9+0.1);
+tl.fromTo("#s9-sweep",{xPercent:0},{xPercent:330,duration:1.5,ease:INOUT},T.s9+1.0);
+tl.fromTo("#wm",{opacity:0,y:24},{opacity:1,y:0,duration:0.9,ease:OUT},T.s9+0.35);
+tl.fromTo("#hair",{scaleX:0},{scaleX:1,duration:0.7,ease:OUT},T.s9+0.75);
+tl.fromTo("#s9-name",{opacity:0,y:20},{opacity:1,y:0,duration:0.8,ease:OUT},T.s9+0.7);
+tl.fromTo("#cta-wrap",{opacity:0,y:24},{opacity:1,y:0,duration:0.8,ease:OUT},T.s9+0.9);
+tl.fromTo("#url",{opacity:0},{opacity:1,duration:0.8,ease:"power2.out"},T.s9+1.1);
+tl.fromTo("#cta",{scale:1},{scale:1.04,duration:0.6,ease:"back.out(1.15)"},T.s9+2.4);
+window.__timelines["main"]=tl;
+    </script>
+  </body>
+</html>
