@@ -107,14 +107,14 @@
 const T={s2:2.2,s3:4.4,s4:7.7,gust:9.0,s4b:9.3,s5:12.2,s6:14.3,s7:17.0,q:19.4,s7b:20.1,s8:23.6,s8b:25.3,s9:26.8};
 // voice timing for word highlights: [start, duration]
 const VO={c1:[0.2,1.7],c2:[2.5,1.5],c3:[4.7,2.9],c4:[7.9,3.7],c5:[12.4,1.7],c6:[14.5,2.5],c7:[17.3,2.6],quote:[19.9,3.4],c8:[23.9,2.0]};
-document.querySelectorAll("[data-split]").forEach((el)=>{const w=el.textContent.trim().split(/\s+/);el.innerHTML=w.map((x)=>`<span class="w">${x}</span>`).join(" ");});
+document.querySelectorAll("[data-split]").forEach((el)=>{const w=el.textContent.trim().split(/\s+/);el.innerHTML=w.map((x)=>"<span class=\"w\">"+x+"</span>").join(" ");});
 const OUT="expo.out",IN="power3.in";
 window.__timelines=window.__timelines||{};const tl=gsap.timeline({paused:true});
-const pop=(id,t)=>tl.fromTo(`#${id} .w`,{opacity:0,y:40,scale:0.85},{opacity:1,y:0,scale:1,duration:0.45,ease:"back.out(1.6)",stagger:0.05},t);
-const out=(id,t)=>tl.to(`#${id}`,{opacity:0,y:-30,duration:0.3,ease:IN},t);
-const hl=(id)=>{const ws=document.querySelectorAll(`#${id} .w`);const [s,d]=VO[id];const step=d/ws.length;ws.forEach((w,i)=>{tl.fromTo(w,{color:id==="quote"?"#5a2d12":"#ffffff"},{color:id==="quote"?"#d9480f":"#ffd23f",duration:0.12,ease:"none"},s+i*step);tl.to(w,{color:id==="quote"?"#5a2d12":"#ffffff",duration:0.2,ease:"none"},s+(i+1)*step+0.05);});};
-const fadeIn=(id,t)=>tl.fromTo(`#${id}`,{opacity:0},{opacity:1,duration:0.3,ease:"power2.out"},t);
-const drift=(id,t,d,from,to)=>tl.fromTo(`#${id}`,from,{...to,duration:d,ease:"none"},t);
+const pop=(id,t)=>tl.fromTo("#"+id+" .w",{opacity:0,y:40,scale:0.85},{opacity:1,y:0,scale:1,duration:0.45,ease:"back.out(1.6)",stagger:0.05},t);
+const out=(id,t)=>tl.to("#"+id,{opacity:0,y:-30,duration:0.3,ease:IN},t);
+const hl=(id)=>{const ws=document.querySelectorAll("#"+id+" .w");const [s,d]=VO[id];const step=d/ws.length;ws.forEach((w,i)=>{tl.fromTo(w,{color:id==="quote"?"#5a2d12":"#ffffff"},{color:id==="quote"?"#d9480f":"#ffd23f",duration:0.12,ease:"none"},s+i*step);tl.to(w,{color:id==="quote"?"#5a2d12":"#ffffff",duration:0.2,ease:"none"},s+(i+1)*step+0.05);});};
+const fadeIn=(id,t)=>tl.fromTo("#"+id,{opacity:0},{opacity:1,duration:0.3,ease:"power2.out"},t);
+const drift=(id,t,d,from,to)=>tl.fromTo("#"+id,from,{...to,duration:d,ease:"none"},t);
 // s1: hook, art shakes with anger, text on screen from frame 0
 tl.set("#c1 .w",{opacity:1},0);
 drift("a1",0,2.6,{scale:1.12,x:0},{scale:1.04,x:0});
@@ -128,7 +128,7 @@ fadeIn("s3",T.s3); drift("a3",T.s3,3.7,{scale:1.1,y:30},{scale:1.02,y:-10}); pop
 fadeIn("s4",T.s4); drift("a4",T.s4,1.3,{scale:1.03},{scale:1.1});
 tl.to("#a4",{x:-120,scale:1.18,filter:"blur(6px)",duration:0.35,ease:"power2.in"},T.gust);
 pop("c4",T.s4+0.15); hl("c4");
-["#sw1","#sw2","#sw3"].forEach((p,i)=>{const L=1700;tl.fromTo(p,{strokeDasharray:`${L} ${L}`,strokeDashoffset:L},{strokeDashoffset:-L,duration:0.9,ease:"power2.inOut"},T.gust-0.05+i*0.08);});
+["#sw1","#sw2","#sw3"].forEach((p,i)=>{const L=1700;tl.fromTo(p,{strokeDasharray:L+" "+L,strokeDashoffset:L},{strokeDashoffset:-L,duration:0.9,ease:"power2.inOut"},T.gust-0.05+i*0.08);});
 tl.fromTo("#s4b",{opacity:0},{opacity:1,duration:0.15,ease:"none"},T.s4b);
 tl.fromTo("#a4b",{x:90,scale:1.2,filter:"blur(6px)"},{x:0,scale:1.06,filter:"blur(0px)",duration:0.6,ease:OUT},T.s4b);
 tl.to("#a4b",{scale:1.0,duration:2.4,ease:"none"},T.s4b+0.6);
