@@ -73,8 +73,8 @@
       "content": "/home/runner/.cache/hyperframes/history/2fa0d0f2-7f85-44df-8bc1-bdb5bd84b545/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
     },
     "index.html": {
-      "hash": "f83dbab94c9f4923063b622586add3323952172a207d08c1f9aa6bcabd693fe8",
-      "content": "/home/runner/.cache/hyperframes/history/2fa0d0f2-7f85-44df-8bc1-bdb5bd84b545/blobs/f8/f83dbab94c9f4923063b622586add3323952172a207d08c1f9aa6bcabd693fe8"
+      "hash": "5aa2281bc05ebef50f68a58d513f15e50bdf660f9a1c09a73dc67a3b7aaaa917",
+      "content": "/home/runner/.cache/hyperframes/history/2fa0d0f2-7f85-44df-8bc1-bdb5bd84b545/blobs/5a/5aa2281bc05ebef50f68a58d513f15e50bdf660f9a1c09a73dc67a3b7aaaa917"
     },
     "meta.json": {
       "hash": "08f88969b5f335336f9b26c9f50c74476e2e8e65ec349b9b7433e02ebc8a5ef7",
@@ -110,8 +110,8 @@
   },
   "renders": {
     "latest": {
-      "id": "6c40be71-0109-4187-8169-9cdd863c102c",
-      "completedAt": 1794495129065,
+      "id": "2f8b2c0b-d0c7-49f6-92a0-bb966716580c",
+      "completedAt": 1794495341486,
       "output": "/home/runner/work/video-studio/video-studio/out/reel-spelled-it-wrong.mp4",
       "status": "completed",
       "revision": null
