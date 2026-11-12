@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Baloo 2"; src: url("assets/fonts/baloo-2-latin-800-normal.woff2") format("woff2"); font-weight: 800; }
+      @font-face { font-family: "Baloo 2"; src: url("assets/fonts/baloo-2-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
+      :root { --sand: #e9a35e; --brown: #5a2d12; --sun: #ffd23f; --cream: #fff6e6; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #e9a35e; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--sand); font-family: "Baloo 2", sans-serif; }
+      .clip { position: absolute; inset: 0; }
+      .scene { overflow: hidden; }
+      .art { position: absolute; inset: -40px; background-size: cover; background-position: center; transform-origin: 50% 55%; }
+      .topshade { position: absolute; left: 0; right: 0; top: 0; height: 720px;
+        background: linear-gradient(180deg, rgba(60,25,5,0.55) 0%, rgba(60,25,5,0.25) 55%, rgba(60,25,5,0) 100%); }
+      .cap { position: absolute; left: 70px; right: 70px; top: 230px; text-align: center; font-weight: 800; font-size: 92px; line-height: 1.02;
+        color: #fff; -webkit-text-stroke: 10px var(--brown); paint-order: stroke fill; letter-spacing: -0.005em; }
+      .cap .w { display: inline-block; }
+      .cap.small { font-size: 80px; }
+      .quote { position: absolute; left: 80px; right: 80px; top: 1250px; text-align: center; font-weight: 800; font-size: 74px; line-height: 1.05;
+        color: var(--brown); background: var(--cream); border-radius: 48px; padding: 44px 40px 40px; box-shadow: 0 18px 0 rgba(90,45,18,0.25); }
+      .swoosh { position: absolute; inset: 0; }
+      .grain { position: absolute; border-radius: 50%; background: #c98545; }
+      .endbg { position: absolute; inset: 0; background: radial-gradient(circle at 50% 35%, #ffd9a0 0%, #e9a35e 60%, #c97c3c 100%); }
+      .book { position: absolute; left: 290px; top: 240px; width: 500px; height: 800px; border-radius: 10px 22px 22px 10px; background-size: cover; background-position: center;
+        box-shadow: -14px 0 0 rgba(0,0,0,0.12) inset, 0 30px 60px rgba(70,30,5,0.45); }
+      .end-title { position: absolute; left: 60px; right: 60px; top: 1110px; text-align: center; font-weight: 800; font-size: 96px; color: #fff; -webkit-text-stroke: 10px var(--brown); paint-order: stroke fill; }
+      .end-sub { position: absolute; left: 60px; right: 60px; top: 1235px; text-align: center; font-weight: 600; font-size: 50px; color: var(--brown); }
+      .end-pill { position: absolute; left: 50%; top: 1370px; transform: translateX(-50%); white-space: nowrap; font-weight: 800; font-size: 56px; color: var(--brown);
+        background: var(--sun); padding: 22px 56px 16px; border-radius: 999px; box-shadow: 0 10px 0 rgba(90,45,18,0.3); }
+      .end-small { position: absolute; left: 60px; right: 60px; top: 1520px; text-align: center; font-weight: 600; font-size: 40px; color: var(--brown); letter-spacing: 0.02em; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32" data-width="1080" data-height="1920">
+      <audio id="mix" class="clip" src="assets/mix.wav" data-start="0" data-duration="32" data-track-index="30"></audio>
+
+      <div id="s1" class="clip scene" data-start="0" data-duration="2.5" data-track-index="0">
+        <div id="a1" class="art" style="background-image:url(assets/c_p13.jpg)"></div><div class="topshade"></div>
+        <div id="c1" class="cap" data-split>“You always ruin everything!”</div>
+      </div>
+      <div id="s2" class="clip scene" data-start="2.2" data-duration="2.5" data-track-index="1">
+        <div id="a2" class="art" style="background-image:url(assets/c_p14.jpg)"></div><div class="topshade"></div>
+        <div id="c2" class="cap" data-split>Sound familiar, parents?</div>
+      </div>
+      <div id="s3" class="clip scene" data-start="4.4" data-duration="3.6" data-track-index="2">
+        <div id="a3" class="art" style="background-image:url(assets/c_p04.jpg)"></div><div class="topshade"></div>
+        <div id="c3" class="cap small" data-split>Etoo and Bella were best friends…</div>
+      </div>
+      <div id="s4" class="clip scene" data-start="7.7" data-duration="1.9" data-track-index="3">
+        <div id="a4" class="art" style="background-image:url(assets/c_cover_scene.jpg)"></div><div class="topshade"></div>
+      </div>
+      <div id="s4b" class="clip scene" data-start="9.3" data-duration="3.2" data-track-index="4">
+        <div id="a4b" class="art" style="background-image:url(assets/c_p09.jpg)"></div><div class="topshade"></div>
+        <div id="sand" class="clip" style="pointer-events:none;"></div>
+      </div>
+      <div id="s4w" class="clip" data-start="8.9" data-duration="1.3" data-track-index="5">
+        <svg class="swoosh" viewBox="0 0 1080 1920">
+          <path id="sw1" d="M-200 900 C 200 820, 600 1020, 1300 880" stroke="#fff" stroke-width="26" fill="none" stroke-linecap="round" opacity="0.95"/>
+          <path id="sw2" d="M-200 1060 C 260 980, 640 1180, 1300 1040" stroke="#fff" stroke-width="18" fill="none" stroke-linecap="round" opacity="0.85"/>
+          <path id="sw3" d="M-200 1230 C 300 1150, 700 1330, 1300 1200" stroke="#fff" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.75"/>
+        </svg>
+      </div>
+      <div id="c4w" class="clip" data-start="7.7" data-duration="4.8" data-track-index="6">
+        <div id="c4" class="cap small" data-split>…until one gust knocked his sand tower down!</div>
+      </div>
+      <div id="s5" class="clip scene" data-start="12.2" data-duration="2.5" data-track-index="7">
+        <div id="a5" class="art" style="background-image:url(assets/c_p11.jpg)"></div><div class="topshade"></div>
+        <div id="c5" class="cap" data-split>He was too angry to listen.</div>
+      </div>
+      <div id="s6" class="clip scene" data-start="14.3" data-duration="3.1" data-track-index="8">
+        <div id="a6" class="art" style="background-image:url(assets/c_p15.jpg)"></div><div class="topshade"></div>
+        <div id="c6" class="cap small" data-split>But being angry didn't make him feel better.</div>
+      </div>
+      <div id="s7" class="clip scene" data-start="17.0" data-duration="3.4" data-track-index="9">
+        <div id="a7" class="art" style="background-image:url(assets/c_p21.jpg)"></div><div class="topshade"></div>
+        <div id="c7" class="cap small" data-split>Then he remembered the wise old scorpion…</div>
+      </div>
+      <div id="s7b" class="clip scene" data-start="20.1" data-duration="3.8" data-track-index="10">
+        <div id="a7b" class="art" style="background-image:url(assets/c_p20.jpg)"></div>
+      </div>
+      <div id="q7" class="clip" data-start="19.4" data-duration="4.4" data-track-index="11">
+        <div id="quote" class="quote" data-split>“When anger buzzes loud, pause and listen to your heart.”</div>
+      </div>
+      <div id="s8" class="clip scene" data-start="23.6" data-duration="1.9" data-track-index="12">
+        <div id="a8" class="art" style="background-image:url(assets/c_p24.jpg)"></div><div class="topshade"></div>
+      </div>
+      <div id="s8b" class="clip scene" data-start="25.3" data-duration="1.8" data-track-index="13">
+        <div id="a8b" class="art" style="background-image:url(assets/c_p29.jpg)"></div><div class="topshade"></div>
+      </div>
+      <div id="c8w" class="clip" data-start="23.6" data-duration="3.5" data-track-index="14">
+        <div id="c8" class="cap" data-split>“Bella, I'm sorry I got so mad.”</div>
+      </div>
+      <div id="s9" class="clip scene" data-start="26.8" data-duration="5.2" data-track-index="15">
+        <div class="endbg"></div>
+        <div id="book" class="book" style="background-image:url(assets/cover.jpg)"></div>
+        <div id="e1" class="end-title">The Desert Buzz</div>
+        <div id="e2" class="end-sub">A story about managing anger · Ages 3–7</div>
+        <div id="e3" class="end-pill">doubleadventure.ca</div>
+        <div id="e4" class="end-small">Also on Amazon · Double the Adventure · A² Publishing</div>
+      </div>
+    </div>
+    <script>
+const T={s2:2.2,s3:4.4,s4:7.7,gust:9.0,s4b:9.3,s5:12.2,s6:14.3,s7:17.0,q:19.4,s7b:20.1,s8:23.6,s8b:25.3,s9:26.8};
+// voice timing for word highlights: [start, duration]
+const VO={c1:[0.2,1.7],c2:[2.5,1.5],c3:[4.7,2.9],c4:[7.9,3.7],c5:[12.4,1.7],c6:[14.5,2.5],c7:[17.3,2.6],quote:[19.9,3.4],c8:[23.9,2.0]};
+document.querySelectorAll("[data-split]").forEach((el)=>{const w=el.textContent.trim().split(/\s+/);el.innerHTML=w.map((x)=>`<span class="w">${x}</span>`).join(" ");});
+const OUT="expo.out",IN="power3.in";
+window.__timelines=window.__timelines||{};const tl=gsap.timeline({paused:true});
+const pop=(id,t)=>tl.fromTo(`#${id} .w`,{opacity:0,y:40,scale:0.85},{opacity:1,y:0,scale:1,duration:0.45,ease:"back.out(1.6)",stagger:0.05},t);
+const out=(id,t)=>tl.to(`#${id}`,{opacity:0,y:-30,duration:0.3,ease:IN},t);
+const hl=(id)=>{const ws=document.querySelectorAll(`#${id} .w`);const [s,d]=VO[id];const step=d/ws.length;ws.forEach((w,i)=>{tl.fromTo(w,{color:id==="quote"?"#5a2d12":"#ffffff"},{color:id==="quote"?"#d9480f":"#ffd23f",duration:0.12,ease:"none"},s+i*step);tl.to(w,{color:id==="quote"?"#5a2d12":"#ffffff",duration:0.2,ease:"none"},s+(i+1)*step+0.05);});};
+const fadeIn=(id,t)=>tl.fromTo(`#${id}`,{opacity:0},{opacity:1,duration:0.3,ease:"power2.out"},t);
+const drift=(id,t,d,from,to)=>tl.fromTo(`#${id}`,from,{...to,duration:d,ease:"none"},t);
+// s1: hook, art shakes with anger, text on screen from frame 0
+tl.set("#c1 .w",{opacity:1},0);
+drift("a1",0,2.6,{scale:1.12,x:0},{scale:1.04,x:0});
+tl.fromTo("#s1",{x:0},{keyframes:[{x:-14,duration:0.05},{x:12,duration:0.05},{x:-8,duration:0.05},{x:0,duration:0.05}]},0.35);
+hl("c1"); out("c1",2.1);
+// s2
+fadeIn("s2",T.s2); drift("a2",T.s2,2.6,{scale:1.04,x:-20},{scale:1.1,x:20}); pop("c2",T.s2+0.15); hl("c2"); out("c2",4.3);
+// s3
+fadeIn("s3",T.s3); drift("a3",T.s3,3.7,{scale:1.1,y:30},{scale:1.02,y:-10}); pop("c3",T.s3+0.2); hl("c3"); out("c3",7.4);
+// s4 gust: calm push-in, then whip + swooshes, cut to blown tower with sand burst
+fadeIn("s4",T.s4); drift("a4",T.s4,1.3,{scale:1.03},{scale:1.1});
+tl.to("#a4",{x:-120,scale:1.18,filter:"blur(6px)",duration:0.35,ease:"power2.in"},T.gust);
+pop("c4",T.s4+0.15); hl("c4");
+["#sw1","#sw2","#sw3"].forEach((p,i)=>{const L=1700;tl.fromTo(p,{strokeDasharray:`${L} ${L}`,strokeDashoffset:L},{strokeDashoffset:-L,duration:0.9,ease:"power2.inOut"},T.gust-0.05+i*0.08);});
+tl.fromTo("#s4b",{opacity:0},{opacity:1,duration:0.15,ease:"none"},T.s4b);
+tl.fromTo("#a4b",{x:90,scale:1.2,filter:"blur(6px)"},{x:0,scale:1.06,filter:"blur(0px)",duration:0.6,ease:OUT},T.s4b);
+tl.to("#a4b",{scale:1.0,duration:2.4,ease:"none"},T.s4b+0.6);
+tl.fromTo("#s4b",{x:0},{keyframes:[{x:16,duration:0.05},{x:-12,duration:0.05},{x:8,duration:0.05},{x:0,duration:0.06}]},T.s4b+0.1);
+out("c4",12.0);
+// sand burst (seeded)
+let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647;};
+const sand=document.getElementById("sand");
+for(let i=0;i<46;i++){const g=document.createElement("div");g.className="grain";const s=6+rnd()*16;g.style.width=s+"px";g.style.height=s+"px";g.style.left=(250+rnd()*160)+"px";g.style.top=(1150+rnd()*160)+"px";g.style.background=rnd()>0.5?"#c98545":"#e8b878";sand.appendChild(g);
+ tl.fromTo(g,{x:0,y:0,opacity:1},{x:300+rnd()*700,y:-300-rnd()*500,opacity:0,duration:1.2+rnd()*0.9,ease:"power2.out"},T.s4b+0.05+rnd()*0.3);}
+// s5 angry
+fadeIn("s5",T.s5); drift("a5",T.s5,2.6,{scale:1.05},{scale:1.13}); pop("c5",T.s5+0.15); hl("c5"); out("c5",14.4);
+// s6 lonely: slower
+tl.fromTo("#s6",{opacity:0},{opacity:1,duration:0.6,ease:"power2.out"},T.s6); drift("a6",T.s6,3.2,{scale:1.12,y:-20},{scale:1.04,y:10}); pop("c6",T.s6+0.3); hl("c6"); out("c6",17.0);
+// s7 scorpion + quote
+fadeIn("s7",T.s7); drift("a7",T.s7,3.5,{scale:1.04,x:20},{scale:1.12,x:-20}); pop("c7",T.s7+0.15); hl("c7"); out("c7",19.6);
+tl.fromTo("#quote",{opacity:0,y:60,scale:0.9},{opacity:1,y:0,scale:1,duration:0.6,ease:"back.out(1.4)"},T.q); hl("quote");
+tl.to("#quote",{opacity:0,y:30,duration:0.35,ease:IN},23.4);
+// breath page: breathe in / out
+tl.fromTo("#s7b",{opacity:0},{opacity:1,duration:0.7,ease:"power2.inOut"},T.s7b);
+tl.fromTo("#a7b",{scale:1.02},{scale:1.1,duration:1.7,ease:"sine.inOut"},T.s7b);
+tl.to("#a7b",{scale:1.03,duration:1.8,ease:"sine.inOut"},T.s7b+1.7);
+// s8 sorry + together
+fadeIn("s8",T.s8); drift("a8",T.s8,2.0,{scale:1.1},{scale:1.03});
+tl.fromTo("#s8b",{opacity:0,x:120},{opacity:1,x:0,duration:0.5,ease:OUT},T.s8b); drift("a8b",T.s8b,1.9,{scale:1.03},{scale:1.1});
+pop("c8",T.s8+0.15); hl("c8"); out("c8",26.6);
+// end card
+fadeIn("s9",T.s9);
+tl.fromTo("#book",{y:80,rotate:-6,scale:0.9,opacity:0},{y:0,rotate:0,scale:1,opacity:1,duration:0.9,ease:"back.out(1.3)"},T.s9+0.05);
+tl.to("#book",{y:-12,duration:1.6,ease:"sine.inOut",yoyo:true,repeat:2},T.s9+1.0);
+tl.fromTo("#e1",{opacity:0,y:30},{opacity:1,y:0,duration:0.6,ease:OUT},T.s9+0.4);
+tl.fromTo("#e2",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:OUT},T.s9+0.6);
+tl.fromTo("#e3",{opacity:0,scale:0.8},{opacity:1,scale:1,duration:0.6,ease:"back.out(1.6)"},T.s9+0.9);
+tl.fromTo("#e4",{opacity:0},{opacity:1,duration:0.6,ease:"power2.out"},T.s9+1.2);
+window.__timelines["main"]=tl;
+    </script>
+  </body>
+</html>
