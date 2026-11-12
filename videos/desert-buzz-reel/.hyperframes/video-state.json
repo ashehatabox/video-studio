@@ -77,8 +77,8 @@
       "content": "/home/runner/.cache/hyperframes/history/d0adafaf-0362-47fe-a8f2-6af46c2b14bd/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
     },
     "index.html": {
-      "hash": "0c6ff268ca19465d3648fd858851352b8c9b490a8bf76d36f6a0eee6aa792f91",
-      "content": "/home/runner/.cache/hyperframes/history/d0adafaf-0362-47fe-a8f2-6af46c2b14bd/blobs/0c/0c6ff268ca19465d3648fd858851352b8c9b490a8bf76d36f6a0eee6aa792f91"
+      "hash": "c6c4ac4f6cf979cc6904b2dd12c1823dcea6045f0dcf715f9207c31656b59c94",
+      "content": "/home/runner/.cache/hyperframes/history/d0adafaf-0362-47fe-a8f2-6af46c2b14bd/blobs/c6/c6c4ac4f6cf979cc6904b2dd12c1823dcea6045f0dcf715f9207c31656b59c94"
     },
     "meta.json": {
       "hash": "6fe926deaecdc293f692dd6f79a8f44f2f9e1f756030be8df73316178b9be549",
@@ -110,8 +110,8 @@
   },
   "renders": {
     "latest": {
-      "id": "ef86f5be-2ae9-4312-9b0d-ce1f21bb3f7e",
-      "completedAt": 1794501258879,
+      "id": "9c1a2b36-ce4f-44f4-a074-dab28c1f45dc",
+      "completedAt": 1794501422761,
       "output": "/home/runner/work/video-studio/video-studio/out/desert-buzz-reel.mp4",
       "status": "completed",
       "revision": null
