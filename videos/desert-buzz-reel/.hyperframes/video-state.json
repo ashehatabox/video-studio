@@ -85,12 +85,12 @@
       "content": "/home/runner/.cache/hyperframes/history/d0adafaf-0362-47fe-a8f2-6af46c2b14bd/blobs/e5/e549d0fcfd0bf92f8100773d057b06b40e97201f64b22e3c93c7802e54ef5921"
     },
     "assets/C3.mp4": {
-      "hash": "c60b0d935cc97daa5465941a81b963074fc0133f12dd8057633765f75a84e366",
-      "content": "/home/runner/.cache/hyperframes/history/d0adafaf-0362-47fe-a8f2-6af46c2b14bd/blobs/c6/c60b0d935cc97daa5465941a81b963074fc0133f12dd8057633765f75a84e366"
+      "hash": "5155e833cc6bfb18e593d81f50f881eb1d641db5272b3539267affabf3e7e647",
+      "content": "/home/runner/.cache/hyperframes/history/d0adafaf-0362-47fe-a8f2-6af46c2b14bd/blobs/51/5155e833cc6bfb18e593d81f50f881eb1d641db5272b3539267affabf3e7e647"
     },
     "assets/C4.mp4": {
-      "hash": "384105b44cf423e1c165ed685930d15a53729a5191f25bb029433d109d273c50",
-      "content": "/home/runner/.cache/hyperframes/history/d0adafaf-0362-47fe-a8f2-6af46c2b14bd/blobs/38/384105b44cf423e1c165ed685930d15a53729a5191f25bb029433d109d273c50"
+      "hash": "1beff124ca74fc399597dac98e5b86e94069fc835c24728e503a019e023fa488",
+      "content": "/home/runner/.cache/hyperframes/history/d0adafaf-0362-47fe-a8f2-6af46c2b14bd/blobs/1b/1beff124ca74fc399597dac98e5b86e94069fc835c24728e503a019e023fa488"
     },
     "assets/mix.wav": {
       "hash": "112e1837ef1a4ea6ea8428edc4ad9d6d8a1786e64d0a9d83c089713d01ec7763",
@@ -110,8 +110,8 @@
   },
   "renders": {
     "latest": {
-      "id": "ddb9937c-ab13-456b-86f5-57700e779d50",
-      "completedAt": 1794515016863,
+      "id": "66dc5e25-47e4-4f52-a91c-9cd603f81923",
+      "completedAt": 1794515303435,
       "output": "/home/runner/work/video-studio/video-studio/out/desert-buzz-reel.mp4",
       "status": "completed",
       "revision": null
