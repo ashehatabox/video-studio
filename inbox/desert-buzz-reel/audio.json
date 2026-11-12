@@ -2,19 +2,47 @@
   "voice": "af_heart",
   "speed": 0.95,
   "lines": [
-    {"id": "vo01", "text": "You always ruin everything!"},
-    {"id": "vo02", "text": "Sound familiar, parents?"},
-    {"id": "vo03", "text": "Etoo the beetle and Bella the bee were best friends..."},
-    {"id": "vo04", "text": "until one gust from Bella's wings knocked his sand tower down."},
-    {"id": "vo05", "text": "He was too angry to listen."},
-    {"id": "vo06", "text": "But being angry didn't make him feel better."},
-    {"id": "vo07", "text": "Then he remembered the wise old scorpion. When anger buzzes loud, pause... and listen to your heart."},
-    {"id": "vo08", "text": "Bella, I'm sorry I got so mad."},
-    {"id": "vo09", "text": "The Desert Buzz. A story about managing anger."}
+    {
+      "id": "vo01",
+      "text": "You always ruin everything!"
+    },
+    {
+      "id": "vo02",
+      "text": "Sound familiar, parents?"
+    },
+    {
+      "id": "vo03",
+      "text": "Etoo the beetle and Bella the bee were best friends..."
+    },
+    {
+      "id": "vo04",
+      "text": "until one gust from Bella's wings knocked his sand tower down."
+    },
+    {
+      "id": "vo05",
+      "text": "He was too angry to listen."
+    },
+    {
+      "id": "vo06",
+      "text": "But being angry didn't make him feel better."
+    },
+    {
+      "id": "vo07",
+      "text": "Then he remembered the wise old scorpion. When anger buzzes loud, pause... and listen to your heart."
+    },
+    {
+      "id": "vo08",
+      "text": "Bella, I'm sorry I got so mad."
+    },
+    {
+      "id": "vo09",
+      "text": "The Desert Buzz. A story about managing anger."
+    }
   ],
   "music": [
-    {"id": "music_a", "url": "https://assets.mixkit.co/music/127/127.mp3"},
-    {"id": "music_b", "url": "https://assets.mixkit.co/music/209/209.mp3"},
-    {"id": "music_c", "url": "https://assets.mixkit.co/music/443/443.mp3"}
+    {
+      "id": "music_classical_vibes_4",
+      "url": "https://assets.mixkit.co/music/684/684.mp3"
+    }
   ]
 }
